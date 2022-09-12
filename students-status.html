@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        
+.steps {
+  --si-steps-padding-y: 1.5rem;
+  --si-steps-padding-x: 1.5rem;
+  --si-steps-number-size: 7.625rem;
+  --si-steps-number-inner-size: 5.625rem;
+  --si-steps-number-size-sm: 5rem;
+  --si-steps-number-inner-size-sm: 3.5rem;
+  --si-steps-number-border-radius: 50%;
+  --si-steps-number-bg: #f3f6ff;
+  --si-steps-number-inner-bg: #fff;
+  --si-steps-number-inner-box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
+    0 0.125rem 0.4rem -0.0625rem rgba(11, 15, 25, 0.03);
+  --si-steps-number-font-size: 2rem;
+  --si-steps-number-font-size-sm: 1.5rem;
+  --si-steps-number-color: var(--si-heading-color);
+  --si-steps-connect-width: var(--si-border-width);
+  --si-steps-connect-color: var(--si-border-color);
+  display: flex;
+  flex-direction: column;
+}
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--si-steps-padding-y) 0;
+}
+.step:first-child {
+  padding-top: 0 !important;
+}
+.step:last-child {
+  padding-bottom: 0 !important;
+}
+.step::before,
+.step::after {
+  position: absolute;
+  left: calc(var(--si-steps-number-size) * 0.5);
+  width: var(--si-steps-connect-width);
+  height: 50%;
+  content: "";
+}
+.step::before {
+  top: 0;
+}
+.step::after {
+  top: 50%;
+}
+.step:not(:first-child)::before {
+  background-color: var(--si-steps-connect-color);
+}
+.step:not(:last-child)::after {
+  background-color: var(--si-steps-connect-color);
+}
+.step-number {
+  position: relative;
+  width: var(--si-steps-number-size);
+  height: var(--si-steps-number-size);
+  flex-shrink: 0;
+  padding-top: calc(
+    (var(--si-steps-number-size) - var(--si-steps-number-inner-size)) * 0.5
+  );
+  padding-left: calc(
+    (var(--si-steps-number-size) - var(--si-steps-number-inner-size)) * 0.5
+  );
+  border-radius: var(--si-steps-number-border-radius);
+  background-color: var(--si-steps-number-bg);
+  color: var(--si-steps-number-color);
+  font-size: var(--si-steps-number-font-size);
+  font-weight: 800;
+  z-index: 2;
+}
+.step-number .step-number-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--si-steps-number-inner-size);
+  height: var(--si-steps-number-inner-size);
+  border-radius: var(--si-steps-number-border-radius);
+  background-color: var(--si-steps-number-inner-bg);
+  box-shadow: var(--si-steps-number-inner-box-shadow);
+}
+.step-body {
+  padding-left: var(--si-steps-padding-x);
+}
+.steps-sm .step::before,
+.steps-sm .step::after {
+  left: calc(var(--si-steps-number-size-sm) * 0.5);
+}
+.steps-sm .step-number {
+  width: var(--si-steps-number-size-sm);
+  height: var(--si-steps-number-size-sm);
+  padding-top: 0.75rem;
+  padding-left: 0.75rem;
+  font-size: var(--si-steps-number-font-size-sm);
+}
+.steps-sm .step-number .step-number-inner {
+  width: var(--si-steps-number-inner-size-sm);
+  height: var(--si-steps-number-inner-size-sm);
+}
+@media (min-width: 500px) {
+  .steps-horizontal-sm.steps {
+    flex-direction: row;
+    margin-right: calc(var(--si-steps-padding-x) * -1);
+    margin-left: calc(var(--si-steps-padding-x) * -1);
+  }
+  .steps-horizontal-sm .step {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 var(--si-steps-padding-x);
+  }
+  .steps-horizontal-sm .step::before,
+  .steps-horizontal-sm .step::after {
+    top: calc(var(--si-steps-number-size) * 0.5);
+    height: var(--si-steps-connect-width);
+  }
+  .steps-horizontal-sm .step::before {
+    display: none;
+    left: 0;
+  }
+  .steps-horizontal-sm .step::after {
+    left: var(--si-steps-padding-x);
+    width: 100%;
+  }
+  .steps-horizontal-sm.steps-sm .step::before,
+  .steps-horizontal-sm.steps-sm .step::after {
+    top: calc(var(--si-steps-number-size-sm) * 0.5);
+  }
+  .steps-horizontal-sm .step-number {
+    margin-bottom: var(--si-steps-padding-y);
+  }
+  .steps-horizontal-sm .step-body {
+    padding-left: 0;
+  }
+  .steps-horizontal-sm.steps-center {
+    text-align: center;
+  }
+  .steps-horizontal-sm.steps-center .step::after {
+    left: 50%;
+    width: 50%;
+  }
+  .steps-horizontal-sm.steps-center .step:not(:first-child)::before {
+    display: block;
+    width: 50%;
+  }
+  .steps-horizontal-sm.steps-center .step-number {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .steps-horizontal-sm.steps-end {
+    text-align: right;
+  }
+  .steps-horizontal-sm.steps-end .step:not(:first-child)::before {
+    display: block;
+    width: calc(100% - var(--si-steps-padding-x));
+  }
+  .steps-horizontal-sm.steps-end .step::after {
+    right: 0;
+    left: auto;
+    width: var(--si-steps-padding-x);
+  }
+  .steps-horizontal-sm.steps-end .step:last-child::after {
+    display: none;
+  }
+  .steps-horizontal-sm.steps-end .step-number {
+    margin-left: auto;
+  }
+}
+@media (min-width: 768px) {
+  .steps-horizontal-md.steps {
+    flex-direction: row;
+    margin-right: calc(var(--si-steps-padding-x) * -1);
+    margin-left: calc(var(--si-steps-padding-x) * -1);
+  }
+  .steps-horizontal-md .step {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 var(--si-steps-padding-x);
+  }
+  .steps-horizontal-md .step::before,
+  .steps-horizontal-md .step::after {
+    top: calc(var(--si-steps-number-size) * 0.5);
+    height: var(--si-steps-connect-width);
+  }
+  .steps-horizontal-md .step::before {
+    display: none;
+    left: 0;
+  }
+  .steps-horizontal-md .step::after {
+    left: var(--si-steps-padding-x);
+    width: 100%;
+  }
+  .steps-horizontal-md.steps-sm .step::before,
+  .steps-horizontal-md.steps-sm .step::after {
+    top: calc(var(--si-steps-number-size-sm) * 0.5);
+  }
+  .steps-horizontal-md .step-number {
+    margin-bottom: var(--si-steps-padding-y);
+  }
+  .steps-horizontal-md .step-body {
+    padding-left: 0;
+  }
+  .steps-horizontal-md.steps-center {
+    text-align: center;
+  }
+  .steps-horizontal-md.steps-center .step::after {
+    left: 50%;
+    width: 50%;
+  }
+  .steps-horizontal-md.steps-center .step:not(:first-child)::before {
+    display: block;
+    width: 50%;
+  }
+  .steps-horizontal-md.steps-center .step-number {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .steps-horizontal-md.steps-end {
+    text-align: right;
+  }
+  .steps-horizontal-md.steps-end .step:not(:first-child)::before {
+    display: block;
+    width: calc(100% - var(--si-steps-padding-x));
+  }
+  .steps-horizontal-md.steps-end .step::after {
+    right: 0;
+    left: auto;
+    width: var(--si-steps-padding-x);
+  }
+  .steps-horizontal-md.steps-end .step:last-child::after {
+    display: none;
+  }
+  .steps-horizontal-md.steps-end .step-number {
+    margin-left: auto;
+  }
+}
+@media (min-width: 992px) {
+  .steps-horizontal-lg.steps {
+    flex-direction: row;
+    margin-right: calc(var(--si-steps-padding-x) * -1);
+    margin-left: calc(var(--si-steps-padding-x) * -1);
+  }
+  .steps-horizontal-lg .step {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 var(--si-steps-padding-x);
+  }
+  .steps-horizontal-lg .step::before,
+  .steps-horizontal-lg .step::after {
+    top: calc(var(--si-steps-number-size) * 0.5);
+    height: var(--si-steps-connect-width);
+  }
+  .steps-horizontal-lg .step::before {
+    display: none;
+    left: 0;
+  }
+  .steps-horizontal-lg .step::after {
+    left: var(--si-steps-padding-x);
+    width: 100%;
+  }
+  .steps-horizontal-lg.steps-sm .step::before,
+  .steps-horizontal-lg.steps-sm .step::after {
+    top: calc(var(--si-steps-number-size-sm) * 0.5);
+  }
+  .steps-horizontal-lg .step-number {
+    margin-bottom: var(--si-steps-padding-y);
+  }
+  .steps-horizontal-lg .step-body {
+    padding-left: 0;
+  }
+  .steps-horizontal-lg.steps-center {
+    text-align: center;
+  }
+  .steps-horizontal-lg.steps-center .step::after {
+    left: 50%;
+    width: 50%;
+  }
+  .steps-horizontal-lg.steps-center .step:not(:first-child)::before {
+    display: block;
+    width: 50%;
+  }
+  .steps-horizontal-lg.steps-center .step-number {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .steps-horizontal-lg.steps-end {
+    text-align: right;
+  }
+  .steps-horizontal-lg.steps-end .step:not(:first-child)::before {
+    display: block;
+    width: calc(100% - var(--si-steps-padding-x));
+  }
+  .steps-horizontal-lg.steps-end .step::after {
+    right: 0;
+    left: auto;
+    width: var(--si-steps-padding-x);
+  }
+  .steps-horizontal-lg.steps-end .step:last-child::after {
+    display: none;
+  }
+  .steps-horizontal-lg.steps-end .step-number {
+    margin-left: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .steps-horizontal-xl.steps {
+    flex-direction: row;
+    margin-right: calc(var(--si-steps-padding-x) * -1);
+    margin-left: calc(var(--si-steps-padding-x) * -1);
+  }
+  .steps-horizontal-xl .step {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 var(--si-steps-padding-x);
+  }
+  .steps-horizontal-xl .step::before,
+  .steps-horizontal-xl .step::after {
+    top: calc(var(--si-steps-number-size) * 0.5);
+    height: var(--si-steps-connect-width);
+  }
+  .steps-horizontal-xl .step::before {
+    display: none;
+    left: 0;
+  }
+  .steps-horizontal-xl .step::after {
+    left: var(--si-steps-padding-x);
+    width: 100%;
+  }
+  .steps-horizontal-xl.steps-sm .step::before,
+  .steps-horizontal-xl.steps-sm .step::after {
+    top: calc(var(--si-steps-number-size-sm) * 0.5);
+  }
+  .steps-horizontal-xl .step-number {
+    margin-bottom: var(--si-steps-padding-y);
+  }
+  .steps-horizontal-xl .step-body {
+    padding-left: 0;
+  }
+  .steps-horizontal-xl.steps-center {
+    text-align: center;
+  }
+  .steps-horizontal-xl.steps-center .step::after {
+    left: 50%;
+    width: 50%;
+  }
+  .steps-horizontal-xl.steps-center .step:not(:first-child)::before {
+    display: block;
+    width: 50%;
+  }
+  .steps-horizontal-xl.steps-center .step-number {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .steps-horizontal-xl.steps-end {
+    text-align: right;
+  }
+  .steps-horizontal-xl.steps-end .step:not(:first-child)::before {
+    display: block;
+    width: calc(100% - var(--si-steps-padding-x));
+  }
+  .steps-horizontal-xl.steps-end .step::after {
+    right: 0;
+    left: auto;
+    width: var(--si-steps-padding-x);
+  }
+  .steps-horizontal-xl.steps-end .step:last-child::after {
+    display: none;
+  }
+  .steps-horizontal-xl.steps-end .step-number {
+    margin-left: auto;
+  }
+}
+@media (min-width: 1400px) {
+  .steps-horizontal-xxl.steps {
+    flex-direction: row;
+    margin-right: calc(var(--si-steps-padding-x) * -1);
+    margin-left: calc(var(--si-steps-padding-x) * -1);
+  }
+  .steps-horizontal-xxl .step {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 var(--si-steps-padding-x);
+  }
+  .steps-horizontal-xxl .step::before,
+  .steps-horizontal-xxl .step::after {
+    top: calc(var(--si-steps-number-size) * 0.5);
+    height: var(--si-steps-connect-width);
+  }
+  .steps-horizontal-xxl .step::before {
+    display: none;
+    left: 0;
+  }
+  .steps-horizontal-xxl .step::after {
+    left: var(--si-steps-padding-x);
+    width: 100%;
+  }
+  .steps-horizontal-xxl.steps-sm .step::before,
+  .steps-horizontal-xxl.steps-sm .step::after {
+    top: calc(var(--si-steps-number-size-sm) * 0.5);
+  }
+  .steps-horizontal-xxl .step-number {
+    margin-bottom: var(--si-steps-padding-y);
+  }
+  .steps-horizontal-xxl .step-body {
+    padding-left: 0;
+  }
+  .steps-horizontal-xxl.steps-center {
+    text-align: center;
+  }
+  .steps-horizontal-xxl.steps-center .step::after {
+    left: 50%;
+    width: 50%;
+  }
+  .steps-horizontal-xxl.steps-center .step:not(:first-child)::before {
+    display: block;
+    width: 50%;
+  }
+  .steps-horizontal-xxl.steps-center .step-number {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .steps-horizontal-xxl.steps-end {
+    text-align: right;
+  }
+  .steps-horizontal-xxl.steps-end .step:not(:first-child)::before {
+    display: block;
+    width: calc(100% - var(--si-steps-padding-x));
+  }
+  .steps-horizontal-xxl.steps-end .step::after {
+    right: 0;
+    left: auto;
+    width: var(--si-steps-padding-x);
+  }
+  .steps-horizontal-xxl.steps-end .step:last-child::after {
+    display: none;
+  }
+  .steps-horizontal-xxl.steps-end .step-number {
+    margin-left: auto;
+  }
+}
+.steps-horizontal.steps {
+  flex-direction: row;
+  margin-right: calc(var(--si-steps-padding-x) * -1);
+  margin-left: calc(var(--si-steps-padding-x) * -1);
+}
+.steps-horizontal .step {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 var(--si-steps-padding-x);
+}
+.steps-horizontal .step::before,
+.steps-horizontal .step::after {
+  top: calc(var(--si-steps-number-size) * 0.5);
+  height: var(--si-steps-connect-width);
+}
+.steps-horizontal .step::before {
+  display: none;
+  left: 0;
+}
+.steps-horizontal .step::after {
+  left: var(--si-steps-padding-x);
+  width: 100%;
+}
+.steps-horizontal.steps-sm .step::before,
+.steps-horizontal.steps-sm .step::after {
+  top: calc(var(--si-steps-number-size-sm) * 0.5);
+}
+.steps-horizontal .step-number {
+  margin-bottom: var(--si-steps-padding-y);
+}
+.steps-horizontal .step-body {
+  padding-left: 0;
+}
+.steps-horizontal.steps-center {
+  text-align: center;
+}
+.steps-horizontal.steps-center .step::after {
+  left: 50%;
+  width: 50%;
+}
+.steps-horizontal.steps-center .step:not(:first-child)::before {
+  display: block;
+  width: 50%;
+}
+.steps-horizontal.steps-center .step-number {
+  margin-right: auto;
+  margin-left: auto;
+}
+.steps-horizontal.steps-end {
+  text-align: right;
+}
+.steps-horizontal.steps-end .step:not(:first-child)::before {
+  display: block;
+  width: calc(100% - var(--si-steps-padding-x));
+}
+.steps-horizontal.steps-end .step::after {
+  right: 0;
+  left: auto;
+  width: var(--si-steps-padding-x);
+}
+.steps-horizontal.steps-end .step:last-child::after {
+  display: none;
+}
+.steps-horizontal.steps-end .step-number {
+  margin-left: auto;
+}
+@media (max-width: 499.98px) {
+  .steps-sm .step,
+  .step {
+    padding: calc(var(--si-steps-padding-y) * 0.625) 0;
+  }
+  .steps-sm .step::before,
+  .steps-sm .step::after,
+  .step::before,
+  .step::after {
+    left: calc(var(--si-steps-number-size) * 0.625 * 0.5);
+  }
+  .steps-sm .step-number,
+  .step-number {
+    width: calc(var(--si-steps-number-size) * 0.625);
+    height: calc(var(--si-steps-number-size) * 0.625);
+    padding-top: calc(
+      (
+          var(--si-steps-number-size) * 0.625 -
+            var(--si-steps-number-inner-size) * 0.625
+        ) * 0.5
+    );
+    padding-left: calc(
+      (
+          var(--si-steps-number-size) * 0.625 -
+            var(--si-steps-number-inner-size) * 0.625
+        ) * 0.5
+    );
+    font-size: calc(var(--si-steps-number-font-size) * 0.625);
+  }
+  .steps-sm .step-number .step-number-inner,
+  .step-number .step-number-inner {
+    width: calc(var(--si-steps-number-inner-size) * 0.625);
+    height: calc(var(--si-steps-number-inner-size) * 0.625);
+  }
+  .step-body {
+    padding-left: calc(var(--si-steps-padding-x) * 0.875);
+  }
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.fs-sm {
+  font-size: 0.875rem !important;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Jhon Doe</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="button.html" class="dropdown-item">Buttons</a>
+                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                        </div>
+                    </div>
+                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Sale & Revenue Start -->
+
+
+
+            <!-- <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-plus fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Applied Requests&nbsp;&nbsp;</p>
+                                <h6 class="mb-0">10</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-check-circle fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Accepted Requests</p>
+                                <h6 class="mb-0">7</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-ban fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Rejected Requests</p>
+                                <h6 class="mb-0">2</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-edit fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Pending Requests</p>
+                                <h6 class="mb-0">1</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            
+            
+           
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Details</h6>
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4">Out Date</dt>
+                                <dd class="col-sm-8">12/05/2022</dd>
+                                
+                                <dt class="col-sm-4">Out Time</dt>
+                                <dd class="col-sm-8">12:00 PM</dd>
+
+                                <dt class="col-sm-4">In Date</dt>
+                                <dd class="col-sm-8">12/05/2022</dd>
+
+                                <dt class="col-sm-4">In Time</dt>
+                                <dd class="col-sm-8">12:00 PM</dd>
+
+                                <dt class="col-sm-4">Place</dt>
+                                <dd class="col-sm-8">Coimbatore</dd>
+
+                                <dt class="col-sm-4">Companion</dt>
+                                <dd class="col-sm-8">Self</dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-8">
+                        <div class="bg-light rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Application Status</h6>
+                            </div>
+                            <div class="steps steps-horizontal-md">
+                                <div class="step">
+                                  <div class="step-number bg-light">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-faded-success"></span>
+                                    <div class="step-number-inner bg-success">
+                                        <i class="fa fa-check-circle fa-3x text-white"></i>
+                                    </div>
+                                  </div>
+                                  <div class="step-body">
+                                    <h6 class="mb-2">&nbsp; &nbsp;Tutor Approval</h6>
+                                
+                                  </div>
+                                </div>
+                                <div class="step">
+                                  <div class="step-number">
+                                    <div class="step-number-inner">2</div>
+                                  </div>
+                                  <div class="step-body">
+                                    <h6 class="mb-2">&nbsp; &nbsp;HOD Approval</h6>
+                                    
+                                  </div>
+                                </div>
+                                <div class="step">
+                                  <div class="step-number">
+                                    <div class="step-number-inner">3</div>
+                                  </div>
+                                  <div class="step-body">
+                                    <h6 class="mb-2">&nbsp; &nbsp;Warden Approval</h6>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+            
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Details</h6>
+                            <dl class="row mb-0">
+                                <dt class="col-sm-4">Out Date</dt>
+                                <dd class="col-sm-8">12/05/2022</dd>
+                                
+                                <dt class="col-sm-4">Out Time</dt>
+                                <dd class="col-sm-8">12:00 PM</dd>
+
+                                <dt class="col-sm-4">In Date</dt>
+                                <dd class="col-sm-8">12/05/2022</dd>
+
+                                <dt class="col-sm-4">In Time</dt>
+                                <dd class="col-sm-8">12:00 PM</dd>
+
+                                <dt class="col-sm-4">Place</dt>
+                                <dd class="col-sm-8">Coimbatore</dd>
+
+                                <dt class="col-sm-4">Companion</dt>
+                                <dd class="col-sm-8">Self</dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-8">
+                        <div class="bg-light rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Application Status</h6>
+                            </div>
+                            <div class="steps steps-horizontal-md">
+                                <div class="step">
+                                  <div class="step-number bg-light">
+                                    <span class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-faded-success"></span>
+                                    <div class="step-number-inner bg-success">
+                                        <i class="fa fa-check-circle fa-3x text-white"></i>
+                                    </div>
+                                  </div>
+                                  <div class="step-body">
+                                    <h6 class="mb-2">&nbsp; &nbsp;Tutor Approval</h6>
+                                
+                                  </div>
+                                </div>
+                                <div class="step">
+                                  <div class="step-number">
+                                    <div class="step-number-inner">2</div>
+                                  </div>
+                                  <div class="step-body">
+                                    <h6 class="mb-2">&nbsp; &nbsp;HOD Approval</h6>
+                                    
+                                  </div>
+                                </div>
+                                <div class="step">
+                                  <div class="step-number">
+                                    <div class="step-number-inner">3</div>
+                                  </div>
+                                  <div class="step-body">
+                                    <h6 class="mb-2">&nbsp; &nbsp;Warden Approval</h6>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+           
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
