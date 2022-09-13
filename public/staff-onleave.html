@@ -55,15 +55,20 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Angelin A</h6>
-                        <span>20EUCS187</span>
+                        <h6 class="mb-0">Sarah Lones</h6>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="students-profile.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
-                    <a href="students-form.html" class="nav-item nav-link"><i class="fa fa-plus-circle me-2"></i>Apply Outpass</a>
-                    <a href="students-status.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Track Status</a>
-                    <a href="students-history.html" class="nav-item nav-link active"><i class="fa fa-file-alt me-2"></i>Logs</a>
+                    <a href="tutor-profile.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
+                    <a href="tutor-ward.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>My Ward</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave Requests</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="tutor-pending.html" class="dropdown-item">Pending</a>
+                            <a href="tutor-approved.html" class="dropdown-item">Approved</a>
+                        </div>
+                    </div>
+                    <a href="tutor-onleave.html" class="nav-item nav-link active"><i class="fa fa-file-alt me-2"></i>On Leave</a>
                 </div>
             </nav>
         </div>
@@ -74,7 +79,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="students-profile.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="tutor-profile.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -85,7 +90,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Angelin A</span>
+                            <span class="d-none d-lg-inline-flex">Sarah Lones</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="index.html" class="dropdown-item">Log Out</a>
@@ -95,64 +100,20 @@
             </nav>
             <!-- Navbar End -->
             
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-plus fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Applied Requests&nbsp;&nbsp;</p>
-                                <h6 class="mb-0">10</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-check-circle fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Accepted Requests</p>
-                                <h6 class="mb-0">7</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-ban fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Rejected Requests</p>
-                                <h6 class="mb-0">2</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-edit fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Pending Requests</p>
-                                <h6 class="mb-0">1</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-
-
-
-
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">HISTORY</h6>
+                        <h6 class="mb-0">Students On Leave</h6>
                         
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark">
-                                    <th scope="col">In Date</th>
-                                    <th scope="col">In Time</th>
-                                    <th scope="col">Out Date</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Out Info</th>
+                                    <th scope="col">In Info</th>
                                     <th scope="col">Out Time</th>
                                     <th scope="col">Place</th>
                                     <th scope="col">Status</th>
