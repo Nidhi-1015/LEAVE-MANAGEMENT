@@ -15,10 +15,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
@@ -57,12 +58,12 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Sarah Lones</h6>
+                        <h6 class="mb-0">Warden Name</h6>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="tutor-profile.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
-                    <a href="tutor-ward.html" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>My Ward</a>
+                    <a href="tutor-ward.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>My Students</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave Requests</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -70,7 +71,7 @@
                             <a href="tutor-approved.html" class="dropdown-item">Approved</a>
                         </div>
                     </div>
-                    <a href="tutor-onleave.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>On Leave</a>
+                    <a href="warden-onleave.html" class="nav-item nav-link active"><i class="fa fa-file-alt me-2"></i>On Leave</a>
                 </div>
             </nav>
         </div>
@@ -92,7 +93,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Sarah Lones</span>
+                            <span class="d-none d-lg-inline-flex">Warden Name</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="index.html" class="dropdown-item">Log Out</a>
@@ -100,9 +101,10 @@
                     </div>
                 </div>
             </nav>
+            <!-- Navbar End -->
 
-            <!--Modal content starts-->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+             <!--Modal content starts-->
+             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -114,6 +116,15 @@
                         <div class="modal-body">
                             <div class="bg-light rounded h-100 p-4">
                                 <dl class="row mb-0">
+                                    <dt class="col-sm-4">Place</dt>
+                                    <dd class="col-sm-8">Coimbatore</dd>
+
+                                    <dt class="col-sm-4">Purpose</dt>
+                                    <dd class="col-sm-8">For my family Get Together</dd>
+                                    
+                                    <dt class="col-sm-4">Companion</dt>
+                                    <dd class="col-sm-8">Self</dd>
+
                                     <dt class="col-sm-4">Parent Name</dt>
                                     <dd class="col-sm-8">Jose</dd>
 
@@ -148,60 +159,67 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">STUDENT LIST</h6>
-
+                        <h6 class="mb-0">Students On Leave</h6>
+                        
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark">
-                                    <th scope="col">RollNo</th>
+                                    <th scope="col">Roll No</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Class</th>
-                                    <th scope="col">Student's Phone</th>
-                                    <th scope="col">Parent's Phone</th>
+                                    <th scope="col">Out Date</th>
+                                    <th scope="col">Out Time</th>
+                                    <th scope="col">In Date</th>
+                                    <th scope="col">In Time</th>
                                     <th scope="col">Details</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class = "table-danger">
                                     <td>20EUCS145</td>
                                     <td>Subha</td>
-                                    <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
+                                    <td>15/09/2002</td>
+                                    <td>06:00 PM</td>
+                                    <td>25/09/2022</td>
+                                    <td>08:00 PM</td>
                                     <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
                                 </tr>
                                 <tr>
                                     <td>20EUCS145</td>
                                     <td>Subha</td>
-                                    <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
+                                    <td>15/09/2002</td>
+                                    <td>06:00 PM</td>
+                                    <td>25/09/2022</td>
+                                    <td>08:00 PM</td>
                                     <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
                                 </tr>
                                 <tr>
                                     <td>20EUCS145</td>
                                     <td>Subha</td>
-                                    <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
+                                    <td>15/09/2002</td>
+                                    <td>06:00 PM</td>
+                                    <td>25/09/2022</td>
+                                    <td>08:00 PM</td>
                                     <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
                                 </tr>
                                 <tr>
                                     <td>20EUCS145</td>
                                     <td>Subha</td>
-                                    <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
+                                    <td>15/09/2002</td>
+                                    <td>06:00 PM</td>
+                                    <td>25/09/2022</td>
+                                    <td>08:00 PM</td>
                                     <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
                                 </tr>
                                 <tr>
                                     <td>20EUCS145</td>
                                     <td>Subha</td>
-                                    <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
+                                    <td>15/09/2002</td>
+                                    <td>06:00 PM</td>
+                                    <td>25/09/2022</td>
+                                    <td>08:00 PM</td>
                                     <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
                                 </tr>
                             </tbody>
@@ -215,12 +233,12 @@
 
 
 
-
+           
         </div>
         <!-- Content End -->
 
 
-
+       
     </div>
 
     <!-- JavaScript Libraries -->
