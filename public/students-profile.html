@@ -250,31 +250,31 @@
         // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyAhuD-3yonP88M0i2Ix3tvDjQSB3EzFna0",
-  authDomain: "leave-management-for-hostel.firebaseapp.com",
-  databaseURL:
-    "https://leave-management-for-hostel-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "leave-management-for-hostel",
-  storageBucket: "leave-management-for-hostel.appspot.com",
-  messagingSenderId: "799414591097",
-  appId: "1:799414591097:web:ae9c26fe05a6335236fea8",
-  measurementId: "G-ZDHQ7Z5WDT",
-        };
+            authDomain: "leave-management-for-hostel.firebaseapp.com",
+            databaseURL:
+                "https://leave-management-for-hostel-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "leave-management-for-hostel",
+            storageBucket: "leave-management-for-hostel.appspot.com",
+            messagingSenderId: "799414591097",
+            appId: "1:799414591097:web:ae9c26fe05a6335236fea8",
+            measurementId: "G-ZDHQ7Z5WDT",
+                    };
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
         const auth = getAuth();
        
-      const user = auth.currentUser;
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          const uid = user.uid;
-        } else {
-            window.location.replace("index.html");
-        }
-      });
+        const user = auth.currentUser;
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+            const uid = user.uid;
+            } else {
+                window.location.replace("index.html");
+            }
+        });
       
-      logout.addEventListener('click',(e)=>{
+        logout.addEventListener('click',(e)=>{
       
          signOut(auth).then(() => {
            // Sign-out successful.
