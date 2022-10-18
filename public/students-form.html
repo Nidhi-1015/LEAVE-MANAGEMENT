@@ -20,9 +20,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -55,8 +52,8 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Angelin A</h6>
-                        <span>20EUCS187</span>
+                        <h6 class="mb-0" id="name1"></h6>
+                        <span id="id1"></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -85,10 +82,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Angelin A</span>
+                            <span class="d-none d-lg-inline-flex" id = "name2"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="index.html" class="dropdown-item">Log Out</a>
+                            <a id="logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -102,31 +99,31 @@
                     <div class="col-sm-12 col-xl-8">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">OUTPASS</h6>
-                            <form>
+                            <form id = "submitForm">
                                 <div class="row mb-3">
                                     <label for="Out-time" class="col-sm-2 col-form-label">Out-time</label>
                                     <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control">
+                                <input type="datetime-local" class="form-control" id = "out" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="In-time" class="col-sm-2 col-form-label">In-time</label>
                                     <div class="col-sm-10">
-                                    <input type="datetime-local" class="form-control">  
+                                    <input type="datetime-local" class="form-control" id="in" required>  
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="Place" class="col-sm-2 col-form-label">Place</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="place" required>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="Purpose" class="col-sm-2 col-form-label">Purpose</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id = "purpose" required>
                                     </div>
                                 </div>
 
@@ -135,14 +132,14 @@
                                     <div class="col-sm-10">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios1" value="option1" checked>
+                                                id="companion" value="option1" checked>
                                             <label class="form-check-label" for="gridRadios1">
                                                 Self
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios2" value="option2">
+                                                id="companion" value="option2">
                                             <label class="form-check-label" for="gridRadios2">
                                                 Parent/Guardian
                                             </label>
@@ -151,7 +148,7 @@
                                 </fieldset>
 
                                 
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" value="Submit" class="btn btn-primary" >Submit</button>
                             </form>
                         </div>
                     </div>
@@ -171,15 +168,10 @@
     </div>
 
     <!-- JavaScript Libraries -->
+    <script type="module" src="./js/students-form.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -20,10 +20,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -55,8 +51,8 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Angelin A</h6>
-                        <span>20EUCS188</span>
+                        <h6 class="mb-0" id = "name1"></h6>
+                        <span id = "mail1"></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -85,7 +81,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Angelin A</span>
+                            <span id = "name2" class="d-none d-lg-inline-flex"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a id="logout" class="dropdown-item">Log Out</a>
@@ -105,38 +101,38 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" value="20eucs188@skcet.ac.in" readonly>
+                                        <input type="email" class="form-control" id="email" readonly>
                                     </div>
                                 </div>
                                 
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Year</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="III" readonly>
+                                        <input type="text" class="form-control" id="year" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Dept</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="CSE" readonly>
+                                        <input type="text" class="form-control" id="dept"readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Class</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="C" readonly>
+                                        <input type="text" class="form-control" id="clas" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Tutor</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value=" Mrs.VijayaKaveri" readonly>
+                                        <input type="text" class="form-control" id="tutor" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="9080555890" readonly>
+                                        <input type="text" class="form-control" id="t-phone" readonly>
                                     </div>
                                 </div>
                             </form>
@@ -146,16 +142,15 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <!-- <h6 class="mb-4">Testimonial</h6> -->
-                            <div class="owl-carousel testimonial-carousel">
-                                <div class="testimonial-item text-center">
+                            <div >
+                                <div class="text-center">
                                     <br>
                                     <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 200px; height: 200px;">
                                     <br>
-                                    <h4 class="mb-1">Angelin A</h4>
-                                    <h5>20EUCS187</h5>
+                                    <h4 class="mb-1 " id = "name3"></h4>
+                                    <h5 id = "id1"></h5>
                                     <!-- <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p> -->
                                 </div>
-                                
                             </div>
                             </form>
                         </div>
@@ -167,25 +162,25 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Block</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" value="II" readonly>
+                                        <input type="text" class="form-control" id="block" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Room.No</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="203" readonly>
+                                        <input type="text" class="form-control" id="roomno" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Warden</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="Mrs.Keerthana" readonly>
+                                        <input type="text" class="form-control" id="warden" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="7895612908" readonly>
+                                        <input type="text" class="form-control" id="w-phone" readonly>
                                     </div>
                                 </div>
                                 
@@ -201,25 +196,25 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Parent</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="Sivakumar S" readonly>
+                                        <input type="text" class="form-control" id="parent" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="9876512343" readonly>
+                                        <input type="text" class="form-control" id="p-phone" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Guardian</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="Sri S" readonly>
+                                        <input type="text" class="form-control" id="gaurdian" readonly>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="7890512321" readonly>
+                                        <input type="text" class="form-control" id="g-phone" readonly>
                                     </div>
                                 </div>
                                 
@@ -239,66 +234,10 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAhuD-3yonP88M0i2Ix3tvDjQSB3EzFna0",
-            authDomain: "leave-management-for-hostel.firebaseapp.com",
-            databaseURL:
-                "https://leave-management-for-hostel-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "leave-management-for-hostel",
-            storageBucket: "leave-management-for-hostel.appspot.com",
-            messagingSenderId: "799414591097",
-            appId: "1:799414591097:web:ae9c26fe05a6335236fea8",
-            measurementId: "G-ZDHQ7Z5WDT",
-                    };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const database = getDatabase(app);
-        const auth = getAuth();
-       
-        const user = auth.currentUser;
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-            const uid = user.uid;
-            } else {
-                window.location.replace("index.html");
-            }
-        });
-      
-        logout.addEventListener('click',(e)=>{
-      
-         signOut(auth).then(() => {
-           // Sign-out successful.
-           alert('user loged out');
-         }).catch((error) => {
-           // An error happened.
-           const errorCode = error.code;
-           const errorMessage = error.message;
-      
-              alert(errorMessage);
-         });
-      
-      });
-      
-      </script>
+    <script type="module" src="./js/students-profile.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

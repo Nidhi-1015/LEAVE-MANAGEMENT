@@ -10,4 +10,10 @@
     }, 1);
   };
   spinner();
+
+  // Sidebar Toggler
+  $(".sidebar-toggler").click(function () {
+    $(".sidebar, .content").toggleClass("open");
+    return false;
+  });
 })(jQuery);
