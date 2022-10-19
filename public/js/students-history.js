@@ -1,12 +1,10 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import {
   getFirestore,
   getDoc,
-  setDoc,
   doc,
   collection,
-  addDoc,
-  onSnapshot,
   query,
   where,
   getDocs,
@@ -39,37 +37,28 @@ const auth = getAuth();
 const user = auth.currentUser;
 const id = localStorage.getItem("id");
 
-const docRef = doc(db, "students", id);
-const docSnap = await getDoc(docRef);
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+  } else {
+    window.location.replace("index.html");
+  }
+});
 
-const name1 = document.getElementById("name1");
-name1.innerHTML = docSnap.get("Name");
-const name2 = document.getElementById("name2");
-name2.innerHTML = docSnap.get("Name");
-const id1 = document.getElementById("id1");
-id1.innerHTML = id;
+logout.addEventListener("click", (e) => {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      localStorage.clear();
+      alert("user loged out");
+    })
+    .catch((error) => {
+      // An error happened.
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-const out = document.getElementById("out");
-const inn = document.getElementById("in");
-const place = document.getElementById("place");
-const purpose = document.getElementById("purpose");
-const companion = document.getElementById("companion");
+      alert(errorMessage);
+    });
+});
 
-const docData = {
-  Email: docSnap.get("Email"),
-  ID: id,
-  outDate: out.value,
-  outTime: out.value,
-  inDate: inn.value,
-  inTime: inn.value,
-  place: place.value,
-  purpose: purpose.value,
-  companion: companion.value,
-  status: "pending",
-  Name: docSnap.get("Name"),
-};
-const newDocRef = doc(collection(db, "applications"));
-await setDoc(newDocRef, docData);
-console.log("success");
-
-window.location.replace("public/students-form.html");
+//main code
