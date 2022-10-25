@@ -60,6 +60,18 @@ logout.addEventListener("click", (e) => {
       alert(errorMessage);
     });
 });
+console.log("id");
+function spin() {
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
+
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 4000);
 
 //main code
 
@@ -93,23 +105,18 @@ const allDocs = querySnapshot.forEach((snap) => {
           <div class="bg-light rounded h-100 p-4">
               <h6 class="mb-4">Details</h6>
               <dl class="row mb-0">
-                  <dt class="col-sm-4">Out Date</dt>
+                  <dt class="col-sm-4">Out Info</dt>
                   <dd class="col-sm-8">` +
     obj.outDate.substring(0, 10) +
-    `</dd>
-                  
-                  <dt class="col-sm-4">Out Time</dt>
-                  <dd class="col-sm-8">` +
+    ` - ` +
     obj.outDate.substring(11) +
     `</dd>
+                  
 
-                  <dt class="col-sm-4">In Date</dt>
+                  <dt class="col-sm-4">In Info</dt>
                   <dd class="col-sm-8">` +
     obj.inDate.substring(0, 10) +
-    `</dd>
-
-                  <dt class="col-sm-4">In Time</dt>
-                  <dd class="col-sm-8">` +
+    ` - ` +
     obj.inDate.substring(11) +
     `</dd>
 
@@ -121,9 +128,15 @@ const allDocs = querySnapshot.forEach((snap) => {
                   <dt class="col-sm-4">Companion</dt>
                   <dd class="col-sm-8">` +
     obj.companion +
-    `</dd>
+    `</dd>`;
+  if (obj.status === "stage3" && obj.mode === "active") {
+    x +=
+      `<dt class="col-sm-4"><a href="outpass.html?id =` +
+      snap.id +
+      `"><button class="btn btn-sm btn-success">view</button></a></dt>`;
+  }
 
-              </dl>
+  x += `</dl>
           </div>
       </div>
       <div class="col-sm-12 col-xl-8">
@@ -191,4 +204,5 @@ const allDocs = querySnapshot.forEach((snap) => {
   </div>
 </div>`;
 });
+
 demoElement.innerHTML = x;

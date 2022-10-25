@@ -55,8 +55,8 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Angelin A</h6>
-                        <span>20EUCS187</span>
+                        <h6 class="mb-0" id="name1"></h6>
+                        <span id="id1"></span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -85,7 +85,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Angelin A</span>
+                            <span class="d-none d-lg-inline-flex" id = "name2"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a id="logout" class="dropdown-item">Log Out</a>
@@ -102,7 +102,7 @@
                             <i class="fa fa-plus fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Applied Requests&nbsp;&nbsp;</p>
-                                <h6 class="mb-0">10</h6>
+                                <h6 class="mb-0" id="applied"></h6>
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                             <i class="fa fa-check-circle fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Accepted Requests</p>
-                                <h6 class="mb-0">7</h6>
+                                <h6 class="mb-0" id="accepted"></h6>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                             <i class="fa fa-ban fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Rejected Requests</p>
-                                <h6 class="mb-0">2</h6>
+                                <h6 class="mb-0" id ="rejected"></h6>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                             <i class="fa fa-edit fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pending Requests</p>
-                                <h6 class="mb-0">1</h6>
+                                <h6 class="mb-0" id = "pending"></h6>
                             </div>
                         </div>
                     </div>
@@ -150,61 +150,17 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark">
-                                    <th scope="col">In Date</th>
-                                    <th scope="col">In Time</th>
                                     <th scope="col">Out Date</th>
                                     <th scope="col">Out Time</th>
+                                    <th scope="col">In Date</th>
+                                    <th scope="col">In Time</th>
                                     <th scope="col">Place</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Companion</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>12.45</td>
-                                    <td>01 Jan 2045</td>
-                                    <td>8.00</td>
-                                    <td>Texas</td>
-                                    <td><a class="btn btn-sm btn-success" href="">Granted</a></td>
-                                    <td>Self</td>
-                                </tr>
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>12.45</td>
-                                    <td>01 Jan 2045</td>
-                                    <td>8.00</td>
-                                    <td>Texas</td>
-                                    <td><a class="btn btn-sm btn-success" href="">Granted</a></td>
-                                    <td>Self</td>
-                                </tr>
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>12.45</td>
-                                    <td>01 Jan 2045</td>
-                                    <td>8.00</td>
-                                    <td>Texas</td>
-                                    <td><a class="btn btn-sm btn-success" href="">Granted</a></td>
-                                    <td>Self</td>
-                                </tr>
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>12.45</td>
-                                    <td>01 Jan 2045</td>
-                                    <td>8.00</td>
-                                    <td>Texas</td>
-                                    <td><a class="btn btn-sm btn-success" href="">Granted</a></td>
-                                    <td>Self</td>
-                                </tr>
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>12.45</td>
-                                    <td>01 Jan 2045</td>
-                                    <td>8.00</td>
-                                    <td>Texas</td>
-                                    <td><a class="btn btn-sm btn-success" href="">Granted</a></td>
-                                    <td>Self</td>
-                                </tr>
+                            <tbody id = "tbody">
+
                             </tbody>
                         </table>
                     </div>
@@ -225,15 +181,10 @@
     </div>
 
     <!-- JavaScript Libraries -->
+    <script type = "module" src = "js/students-history.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+   
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
