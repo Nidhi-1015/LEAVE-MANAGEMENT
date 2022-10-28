@@ -39,37 +39,54 @@ const auth = getAuth();
 const user = auth.currentUser;
 const id = localStorage.getItem("id");
 
-const docRef = doc(db, "students", id);
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+  } else {
+    window.location.replace("index.html");
+  }
+});
+
+logout.addEventListener("click", (e) => {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      localStorage.clear();
+      alert("user loged out");
+    })
+    .catch((error) => {
+      // An error happened.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    });
+});
+
+//main code
+
+const docRef = doc(db, "tutors", "vijeyakaveriv");
 const docSnap = await getDoc(docRef);
 
-const name1 = document.getElementById("name1");
-name1.innerHTML = docSnap.get("Name");
-const name2 = document.getElementById("name2");
-name2.innerHTML = docSnap.get("Name");
-const id1 = document.getElementById("id1");
-id1.innerHTML = id;
+const name1 = document.getElementById("name");
+name1.value = docSnap.get("Name");
 
-const out = document.getElementById("out");
-const inn = document.getElementById("in");
-const place = document.getElementById("place");
-const purpose = document.getElementById("purpose");
-const companion = document.getElementById("companion");
+const name3 = document.getElementById("name2");
+name3.innerHTML = docSnap.get("Name");
 
-const docData = {
-  Email: docSnap.get("Email"),
-  ID: id,
-  outDate: out.value,
-  outTime: out.value,
-  inDate: inn.value,
-  inTime: inn.value,
-  place: place.value,
-  purpose: purpose.value,
-  companion: companion.value,
-  status: "pending",
-  Name: docSnap.get("Name"),
-};
-const newDocRef = doc(collection(db, "applications"));
-await setDoc(newDocRef, docData);
-console.log("success");
+const tname = document.getElementById("tname");
+tname.innerHTML = docSnap.get("Name");
 
-window.location.replace("public/students-form.html");
+const namet = document.getElementById("namet");
+namet.innerHTML = docSnap.get("Name");
+
+const email1 = document.getElementById("email");
+email1.value = docSnap.get("Email");
+
+const dept1 = document.getElementById("dept");
+dept1.value = docSnap.get("Dept");
+
+
+const phone1 = document.getElementById("phone");
+phone1.value = docSnap.get("Phone");
+

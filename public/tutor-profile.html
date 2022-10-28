@@ -613,7 +613,7 @@
                       <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                   </div>
                   <div class="ms-3">
-                      <h6 class="mb-0">Sarah Lones</h6>
+                      <h6 class="mb-0 " id="namet"></h6>
                   </div>
               </div>
               <div class="navbar-nav w-100">
@@ -648,10 +648,10 @@
                   <div class="nav-item dropdown">
                       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                           <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                          <span class="d-none d-lg-inline-flex">Sarah Lones</span>
+                          <span id="name2" class="d-none d-lg-inline-flex"></span>
                       </a>
                       <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                          <a href="index.html" class="dropdown-item">Log Out</a>
+                        <a id="logout" class="dropdown-item">Log Out</a>
                       </div>
                   </div>
               </div>
@@ -668,13 +668,13 @@
                               <div class="row mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" value="Sarah Lones" readonly>
+                                    <input type="text" class="form-control" id="name"  readonly>
                                 </div>
                             </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" value="sarahlones@skcet.ac.in" readonly>
+                                        <input type="email" class="form-control" id="email"  readonly>
                                     </div>
                                 </div>
                                 
@@ -682,7 +682,7 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Dept</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="CSE" readonly>
+                                        <input type="text" class="form-control" id="dept"  readonly>
                                     </div>
                                 </div>
                                 
@@ -690,7 +690,7 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="9082318890" readonly>
+                                        <input type="text" class="form-control" id="phone"  readonly>
                                     </div>
                                 </div>
                             </form>
@@ -705,7 +705,7 @@
                                     <br>
                                     <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 200px; height: 200px;">
                                     <br>
-                                    <h4 class="mb-1">Sarah Lones</h4>
+                                    <h4 class="mb-1" id="tname"></h4>
                                     <!-- <h5>20EUCS187</h5> -->
                                     <!-- <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p> -->
                                 </div>
@@ -739,6 +739,7 @@
     </div>
 
     <!-- JavaScript Libraries -->
+    <script type="module" src="./js/tutor-profile.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>

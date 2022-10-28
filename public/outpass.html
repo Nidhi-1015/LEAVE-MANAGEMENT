@@ -1,0 +1,252 @@
+<html>
+<head>
+	<title>Outpass Form</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
+	
+</head>
+<style>
+	.btn-primary {
+  color: #000;
+  background-color: #009cff;
+  border-color: #009cff;
+  color: #fefefe;
+  font-weight: 300;
+  height: 30px;
+}
+.btn-primary:hover {
+  color: #000;
+  background-color: #26abff;
+  border-color: #1aa6ff;
+}
+
+	body {
+	background-color: #f6f9f8;
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	color: #0e7aea;
+	text-decoration: none;
+}
+
+h6 {
+	color: #9aa3ab;
+	font-weight: 300;
+	line-height: 15px;
+}
+
+h5 {
+	color: #99a1aa;
+	font-weight: 300;
+}
+
+h4 {
+	font-weight: 300;
+	font-size: 15px;
+	color: black;
+	text-align: center;
+	
+}
+
+h3 {
+	color: #58636a;
+	font-weight: 500;
+}
+
+.container {
+	width: 50%;
+	height: 40%;
+	min-width: 636px;
+	min-height: 456px;
+	margin: auto;
+	margin-top: 10%;
+	overflow: hidden;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-box-shadow: 0px 5px 21px 0px rgba(128,128,128,0.2);
+	-moz-box-shadow: 0px 5px 21px 0px rgba(128,128,128,0.2);
+	box-shadow: 0px 5px 21px 0px rgba(128,128,128,0.2);
+}
+
+.left {
+	background-color: #1882ef;
+	width: 39%;
+	height: 457px;
+	border-radius: 5px 0 0 5px;
+	float: left;
+	color: #ffffff;
+}
+
+.info-box {
+	margin-top: 35px;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+.receipt {
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 26px;
+	padding-top: 10px;
+  padding-bottom: 15px;
+	border-bottom: 1px solid #3895f4;
+	height: 15%;
+}
+
+.receipt > span {
+	font-weight: 500;
+	font-size: 21px;
+}
+
+.entry {
+	border-bottom: 1px solid #3895f4;
+	height: 15%;
+	overflow: hidden;
+	padding-top: 12px;
+}
+
+.entry > p {
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 26px;
+	margin-top: 0px !important;
+	float: left;
+}
+
+.entry > i {
+	margin-top: 4px;
+	margin-right: 13px;
+	float: left;
+	color: #b4d8fc;
+}
+
+span {
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.entry:last-child {
+	border-bottom: none;
+}
+
+.right {
+	background-color: #fefefe;
+	width: 61%;
+	height: 100%;
+	float: left;
+	border-radius: 0 5px 5px 0;
+}
+
+.content {
+	margin-top: 10px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.header {
+	overflow: hidden;
+	border-bottom: 1px solid #d7e2e7;
+	height: 80px;
+}
+
+.header > img {
+	width: 300px;
+	height: 75px;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width:50%;
+}
+.main {
+	margin-top: 35px;
+}
+
+.message {
+	margin-top: 30px;
+}
+
+.message > p {
+	font-weight: 400;
+	font-size: 17px;
+	color: #58636a;
+	line-height: 20px;
+}
+
+.footer {
+	overflow: hidden;
+	border-top: 1px solid #d7e2e7;
+	margin-top: 40px;
+	padding-top: 30px;
+}
+
+.footer > h6 {
+    font-size: 16px;
+	color: #0d6cf1;
+	text-align: center;
+	margin-top: 0px !important;
+}
+</style>
+<script type = "module" src = "./js/outpass.js">
+</script>
+<body>
+	<div class="container" id = "outpass">
+		<div class="left">
+			<div class="info-box">
+        
+				<div class="entry">
+					<i class="icon-calendar" aria-hidden="true"></i>
+					<p>Out Date & Time:</br><span id = "outDate"></span></p>
+				</div>
+
+                <div class="entry">
+					<i class="icon-calendar" aria-hidden="true"></i>
+					<p>In Date & Time:</br><span id = "inDate"></span></p>
+				</div>
+
+				<div class="entry">
+					<i class="icon-user" aria-hidden="true"></i>
+					<p>Companion:</br><span id = "companion"></span></p>
+				</div>
+
+				<div class="entry">
+					<i class="icon-notebook" aria-hidden="true"></i>
+					<p>Student Contact Number:</br><span id = "ph1"></span></p>
+				</div>
+
+                <div class="entry">
+					<i class="icon-notebook" aria-hidden="true"></i>
+					<p>Parent Contact Number:</br><span id = "ph2"></span></p>
+				</div>
+
+			</div>
+		</div>
+		<div class="right">
+			<div class="content">
+				<div class="header">
+					<img src="img/skcet.png" class="center">
+				</div>
+				<div class="main">
+					<h4><b>HALL OF RESIDENCE WOMEN OUTPASS</b></h4>
+				</div>
+				<div class="message">
+					<p id = "name"></p>
+                    <p id="address"></p>
+                    <p id = "reason"></p>
+				</div>
+				<div class="footer">
+					<h6><b>Have a safe journey!</b></h6>
+				</div>
+			</div>
+			
+		</div>
+	
+		
+	</div>
+	<br>
+	<button class="btn btn-sm btn-primary center" id = "print">Print</button>
+	
+</body>
+</html>
+

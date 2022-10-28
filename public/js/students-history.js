@@ -1,12 +1,10 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import {
   getFirestore,
   getDoc,
-  setDoc,
   doc,
   collection,
-  addDoc,
-  onSnapshot,
   query,
   where,
   getDocs,
@@ -31,8 +29,6 @@ const firebaseConfig = {
   appId: "1:799414591097:web:ae9c26fe05a6335236fea8",
   measurementId: "G-ZDHQ7Z5WDT",
 };
-
-//console.log("hjjj");
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -78,7 +74,6 @@ var everythingLoaded = setInterval(function () {
 }, 4000);
 
 //main code
-
 const docRef = doc(db, "students", id);
 const docSnap = await getDoc(docRef);
 
@@ -89,44 +84,57 @@ name2.innerHTML = docSnap.get("Name");
 const id1 = document.getElementById("id1");
 id1.innerHTML = id;
 
-const out = document.getElementById("out");
-const inn = document.getElementById("in");
-const place = document.getElementById("place");
-const purpose = document.getElementById("purpose");
-const x = document.querySelector(".submitForm");
+var apply = document.getElementById("applied");
+var accept = document.getElementById("accepted");
+var reject = document.getElementById("rejected");
+var pending = document.getElementById("pending");
 
-x.addEventListener("click", async (event) => {
-  try {
-    event.preventDefault();
+const userquery = query(collection(db, "applications"), where("ID", "==", id));
+const querySnapshot = await getDocs(userquery);
+apply.innerHTML = querySnapshot.size;
 
-    const docData = {
-      Email: docSnap.get("Email"),
-      ID: id,
-      outDate: out.value,
-      outTime: out.value,
-      inDate: inn.value,
-      inTime: inn.value,
-      place: place.value,
-      purpose: purpose.value,
-      companion: document.querySelector('input[name="gridRadios"]:checked')
-        .value,
-      status: "stage1",
-      tutorid: docSnap.get("Tutor-id"),
-      wardenid: docSnap.get("Warden-id"),
-      mode: "active",
-      Name: docSnap.get("Name"),
-      Sphone: docSnap.get("S-Phone"),
-      PPhone: docSnap.get("P-Phone"),
-      Address1: docSnap.get("Address1"),
-      Address2: docSnap.get("Address2"),
-      City: docSnap.get("City"),
-      State: docSnap.get("State"),
-    };
-    const newDocRef = doc(collection(db, "applications"));
-    await setDoc(newDocRef, docData);
-    window.alert("Application submmitted successfully!");
-    window.location.replace("students-status.html");
-  } catch (err) {
-    window.alert("Error Occured" + err);
+const rejectquery = query(
+  collection(db, "applications"),
+  where("ID", "==", id),
+  where("status", "==", "reject")
+);
+const rejectquerySnapshot = await getDocs(rejectquery);
+reject.innerHTML = rejectquerySnapshot.size;
+
+const acceptquery = query(
+  collection(db, "applications"),
+  where("ID", "==", id),
+  where("status", "==", "stage3")
+);
+const acceptquerySnapshot = await getDocs(acceptquery);
+accept.innerHTML = acceptquerySnapshot.size;
+
+pending.innerHTML =
+  querySnapshot.size - rejectquerySnapshot.size - acceptquerySnapshot.size;
+
+var tbody = document.getElementById("tbody");
+var x = "";
+const allDocs = querySnapshot.forEach((snap) => {
+  var obj = snap.data();
+  x +=
+    `<tr><td>` +
+    obj.outDate.substring(0, 10) +
+    `</td><td>` +
+    obj.outDate.substring(11) +
+    `</td><td>` +
+    obj.inDate.substring(0, 10) +
+    `</td><td>` +
+    obj.inDate.substring(11) +
+    `</td><td>` +
+    obj.place +
+    `</td><td>`;
+  if (obj.status === "reject") {
+    x += `<a class="btn btn-sm btn-danger">Rejected`;
+  } else if (obj.status === "stage3") {
+    x += `<a class="btn btn-sm btn-success">Accepted`;
+  } else {
+    x += `<a class="btn btn-sm btn-warning">Pending`;
   }
+  x += `</td><td>` + obj.companion + `</td></tr>`;
 });
+tbody.innerHTML = x;
