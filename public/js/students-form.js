@@ -65,6 +65,18 @@ logout.addEventListener("click", (e) => {
     });
 });
 
+function spin() {
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
+
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 4000);
+
 //main code
 
 const docRef = doc(db, "students", id);
@@ -99,8 +111,16 @@ x.addEventListener("click", async (event) => {
       companion: document.querySelector('input[name="gridRadios"]:checked')
         .value,
       status: "stage1",
+      tutorid: docSnap.get("Tutor-id"),
+      wardenid: docSnap.get("Warden-id"),
       mode: "active",
       Name: docSnap.get("Name"),
+      Sphone: docSnap.get("S-Phone"),
+      PPhone: docSnap.get("P-Phone"),
+      Address1: docSnap.get("Address1"),
+      Address2: docSnap.get("Address2"),
+      City: docSnap.get("City"),
+      State: docSnap.get("State"),
     };
     const newDocRef = doc(collection(db, "applications"));
     await setDoc(newDocRef, docData);
