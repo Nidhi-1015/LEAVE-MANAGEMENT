@@ -99,7 +99,8 @@
                     <div class="col-sm-12 col-xl-8">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">OUTPASS</h6>
-                            <form id = "submitForm">
+
+                            <form>
                                 <div class="row mb-3">
                                     <label for="Out-time" class="col-sm-2 col-form-label">Out-time</label>
                                     <div class="col-sm-10">
@@ -109,7 +110,7 @@
                                 <div class="row mb-3">
                                     <label for="In-time" class="col-sm-2 col-form-label">In-time</label>
                                     <div class="col-sm-10">
-                                    <input type="datetime-local" class="form-control" id="in" required>  
+                                    <input type="datetime-local" class="form-control" id="in" required >  
                                     </div>
                                 </div>
 
@@ -132,14 +133,14 @@
                                     <div class="col-sm-10">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="companion" value="option1" checked>
+                                                id="companion1" value="self" checked>
                                             <label class="form-check-label" for="gridRadios1">
                                                 Self
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="companion" value="option2">
+                                                id="companion2" value="parent">
                                             <label class="form-check-label" for="gridRadios2">
                                                 Parent/Guardian
                                             </label>
@@ -148,8 +149,9 @@
                                 </fieldset>
 
                                 
-                                <button type="submit" value="Submit" class="btn btn-primary" >Submit</button>
+                                <button type="submit" value="Submit" class="btn btn-primary submitForm" >Submit</button>
                             </form>
+                            
                         </div>
                     </div>
                     

@@ -133,7 +133,8 @@
 
        var id;
        async function userType(email) {
-            id = email.substring(0,email.indexOf('@'));
+            id = email.substring(0,email.indexOf("@"));
+            //console.log(id);
             localStorage.setItem('id', id);
             const docRef = doc(db, "users", id);
             try {
@@ -173,6 +174,18 @@
         });
       
        });
+
+       function spin() {
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
+
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 1);
        
       
     //   logout.addEventListener('click',(e)=>{

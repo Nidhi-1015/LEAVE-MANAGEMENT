@@ -58,7 +58,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0" id="name"></h6>
+                        <h6 class="mb-0">Sarah Lones</h6>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -67,16 +67,17 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave Requests</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="tutor-pending.html" class="dropdown-item active">Pending</a>
-                            <a href="tutor-approved.html" class="dropdown-item">Approved</a>
+                            <a href="tutor-pending.html" class="dropdown-item">Pending</a>
+                            <a href="tutor-approved.html" class="dropdown-item active">Approved</a>
                         </div>
                     </div>
                     <a href="tutor-onleave.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>On Leave</a>
-                    <a href="tutor-filter.html" class="nav-item nav-link"><i class="fa fa-filter me-2"></i>Filter</a>
+                    <a href="tutor-filter.html" class="nav-item nav-link active"><i class="fa fa-filter me-2"></i>Filter</a>
                 </div>
             </nav>
         </div>
         <!-- Sidebar End -->
+
 
 
         <!-- Content Start -->
@@ -94,24 +95,55 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex" id="name2"></span>
+                            <span class="d-none d-lg-inline-flex">Sarah Lones</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a id="logout" class="dropdown-item">Log Out</a>
+                            <a href="index.html" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
             <!-- Navbar End -->
+
+            
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-xl-2"></div>
+                    <div class="col-sm-12 col-xl-8">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">OUTPASS</h6>
+                            <form id = "submitForm">
+                                <div class="row mb-3">
+                                    <label for="Out-time" class="col-sm-2 col-form-label">From</label>
+                                    <div class="col-sm-10">
+                                <input type="date" class="form-control" id = "out" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="In-time" class="col-sm-2 col-form-label">To</label>
+                                    <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="in" required>  
+                                    </div>
+                                </div>
+
+                                
+                                <button type="submit" value="Submit" class="btn btn-primary" >Filter</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+            </div>
+            <!-- Form End -->
+
             
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <input id = "inp" value = "aa" />
                             <h5 class="modal-title" id="exampleModalLongTitle">DETAILS</h5>
-                            
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -120,16 +152,9 @@
                             <div class="bg-light rounded h-100 p-4">
                                 <dl class="row mb-0">
                                     
-                                    <dt class="col-sm-4">snap.id</dt>
-                                    <dd class="col-sm-8">Coimbatore</dd>
-                                    
-
                                     <dt class="col-sm-4">Purpose</dt>
                                     <dd class="col-sm-8">For my family Get Together</dd>
                                     
-                                    <dt class="col-sm-4">Companion</dt>
-                                    <dd class="col-sm-8">Self</dd>
-
                                     <dt class="col-sm-4">Parent Name</dt>
                                     <dd class="col-sm-8">Jose</dd>
 
@@ -142,10 +167,10 @@
                                     <dt class="col-sm-4">Guardian Ph No</dt>
                                     <dd class="col-sm-8">6389076123</dd>
 
-                                    <dt class="col-sm-4">Warden Name</dt>
+                                    <dt class="col-sm-4">Tutor Name</dt>
                                     <dd class="col-sm-8">Cathrine</dd>
 
-                                    <dt class="col-sm-4">Warden Ph No</dt>
+                                    <dt class="col-sm-4">Tutor Ph No</dt>
                                     <dd class="col-sm-8">750985123</dd>
 
                                 </dl>
@@ -163,7 +188,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Pending Requests</h6>
+                        <h6 class="mb-0">Filtered List</h6>
                         
                     </div>
                     <div class="table-responsive">
@@ -173,14 +198,57 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">In Date & Time</th>
                                     <th scope="col">Out Date & Time</th>
-                                    <th scope="col" colspan="2" >Status</th>
-                                    <th scope="col" >Details</th>
+                                    <th scope="col">Class</th>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Companion</th>
+                                    
                                 </tr>
                             </thead>
-                            <tbody id="tabody">
-                                
+                            <tbody>
+                                <tr>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
+                                    <td>III CSE C</td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
+                                </tr>
 
-                                
+                                <tr>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
+                                    <td>III CSE C</td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
+                                    <td>III CSE C</td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
+                                    <td>III CSE C</td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
+                                    <td>III CSE C</td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -201,8 +269,6 @@
     </div>
 
     <!-- JavaScript Libraries -->
-
-    <script type = "module" src = "js/tutor-pending.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
