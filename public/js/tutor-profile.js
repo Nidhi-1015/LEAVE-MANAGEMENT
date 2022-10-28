@@ -62,6 +62,18 @@ logout.addEventListener("click", (e) => {
       alert(errorMessage);
     });
 });
+function spin() {
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
+
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 4000);
+
 
 //main code
 

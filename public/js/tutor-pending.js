@@ -3,6 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
 import {
   getFirestore,
   getDoc,
+  setDoc,
   doc,
   collection,
   query,
@@ -60,6 +61,17 @@ logout.addEventListener("click", (e) => {
       alert(errorMessage);
     });
 });
+function spin() {
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
+
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 4000);
 
 //main code
 
@@ -84,6 +96,7 @@ const userquery = query(
 );
 // var demoElement = document.getElementById("demo");
 var x = "";
+var y = "";
 var tbody=document.getElementById("tabody");
 const querySnapshot = await getDocs(userquery);
 const allDocs = querySnapshot.forEach((snap) => {
@@ -95,124 +108,68 @@ const allDocs = querySnapshot.forEach((snap) => {
   <td>`+ obj.Name+`</td>
   <td>`+ obj.inDate.substring(0, 10)+` & `+obj.inDate.substring(11)+`</td>
   <td>`+ obj.outDate.substring(0, 10)+` & `+obj.inDate.substring(11)+`</td>
-  <td><a class="btn btn-sm btn-success" href="">Accept</a></td>
-  <td><a class="btn btn-sm btn-danger" href="">Reject</a></td>
-  <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id = "det" data-value = `+ snap.id+`>Details</a></td>
+  <td><a class="btn btn-sm btn-success" href = "tutor-accept.html?id=`+snap.id+`">Accept</a></td>
+  <td><a class="btn btn-sm btn-danger" href="tutor-reject.html?id=`+snap.id+`">Reject</a></td>
+  <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#`+snap.id +`" data-value = `+ snap.id+`>Details</a></td>
 </tr>`;
-console.log(snap.id);
+y += `<div class="modal fade" id="`+ snap.id+`" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">DETAILS</h5>
+            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        </div>
+        <div class="modal-body">
+            <div class="bg-light rounded h-100 p-4">
+                <dl class="row mb-0">
+                    
+                    <dt class="col-sm-4">Place</dt>
+                    <dd class="col-sm-8">`+obj.place+`</dd>
+                    
+
+                    <dt class="col-sm-4">Purpose</dt>
+                    <dd class="col-sm-8">`+obj.purpose+`</dd>
+                    
+                    <dt class="col-sm-4">Companion</dt>
+                    <dd class="col-sm-8">`+obj.companion+`</dd>
+
+                    <dt class="col-sm-4">Parent Name</dt>
+                    <dd class="col-sm-8">`+obj.pname+`</dd>
+
+                    <dt class="col-sm-4">Parent Ph No</dt>
+                    <dd class="col-sm-8">`+obj.pphone+`</dd>
+
+                    <dt class="col-sm-4">Guardian Name</dt>
+                    <dd class="col-sm-8">`+obj.gname+`</dd>
+
+                    <dt class="col-sm-4">Guardian Ph No</dt>
+                    <dd class="col-sm-8">`+obj.gphone+`</dd>
+
+                    <dt class="col-sm-4">Warden Name</dt>
+                    <dd class="col-sm-8">`+obj.wardenid+`</dd>
+
+                    
+
+                </dl>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+        </div>
+    </div>
+</div>
+</div>`;
+// console.log(snap.id);
+
 });
 tbody.innerHTML=x;
+document.getElementById("modals").innerHTML = y;
 
 
-var det = document.getElementById("det");
-det.addEventListener("click", (event) => {
-  //console.log("hai");
-  document.getElementById("inp").value = det.getAttribute("data-value");
-});
 
-//   x +=
-//     `<div class="container-fluid pt-4 px-4" >
-//   <div class="row g-4">
-//       <div class="col-sm-12 col-xl-4">
-//           <div class="bg-light rounded h-100 p-4">
-//               <h6 class="mb-4">Details</h6>
-//               <dl class="row mb-0">
-//                   <dt class="col-sm-4">Out Date</dt>
-//                   <dd class="col-sm-8">` +
-//     obj.outDate.substring(0, 10) +
-//     `</dd>
-                  
-//                   <dt class="col-sm-4">Out Time</dt>
-//                   <dd class="col-sm-8">` +
-//     obj.outDate.substring(11) +
-//     `</dd>
 
-//                   <dt class="col-sm-4">In Date</dt>
-//                   <dd class="col-sm-8">` +
-//     obj.inDate.substring(0, 10) +
-//     `</dd>
-
-//                   <dt class="col-sm-4">In Time</dt>
-//                   <dd class="col-sm-8">` +
-//     obj.inDate.substring(11) +
-//     `</dd>
-
-//                   <dt class="col-sm-4">Place</dt>
-//                   <dd class="col-sm-8">` +
-//     obj.place +
-//     `</dd>
-
-//                   <dt class="col-sm-4">Companion</dt>
-//                   <dd class="col-sm-8">` +
-//     obj.companion +
-//     `</dd>
-
-//               </dl>
-//           </div>
-//       </div>
-//       <div class="col-sm-12 col-xl-8">
-//           <div class="bg-light rounded p-4">
-//               <div class="d-flex align-items-center justify-content-between mb-4">
-//                   <h6 class="mb-0">Application Status</h6>
-//               </div>
-//               <div class="steps steps-horizontal-md">
-//                   <div class="step">
-//                     <div class="step-number bg-light">
-//                       <span class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-faded-success"></span>
-//                       <div class="step-number-inner bg-success">
-//                           <i class="fa fa-check-circle fa-3x text-white"></i>
-//                       </div>
-//                     </div>
-//                     <div class="step-body">
-//                       <h6 class="mb-2">&nbsp; &nbsp;Form Submission</h6>
-                  
-//                     </div>
-//                   </div>
-//                   <div class="step">`;
-
-//   if (status === "stage1") {
-//     x += `<div class="step-number">
-//                       <div class="step-number-inner">2</div>
-//                     </div>`;
-//   } else {
-//     x += `<div class="step-number bg-light">
-//                     <span class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-faded-success"></span>
-//                     <div class="step-number-inner bg-success">
-//                         <i class="fa fa-check-circle fa-3x text-white"></i>
-//                     </div>
-//                   </div>`;
-//   }
-
-//   x += `<div class="step-body">
-//                       <h6 class="mb-2">&nbsp; &nbsp;Tutor Approval</h6>
-                      
-//                     </div>
-//                   </div>
-//                   <div class="step">`;
-
-//   if (status === "stage3") {
-//     x += `<div class="step-number bg-light">
-//             <span class="position-absolute top-0 start-0 w-100 h-100 rounded-circle bg-faded-success"></span>
-//             <div class="step-number-inner bg-success">
-//                 <i class="fa fa-check-circle fa-3x text-white"></i>
-//             </div>
-//           </div>`;
-//   } else {
-//     x += `<div class="step-number">
-//             <div class="step-number-inner">3</div>
-//           </div>`;
-//   }
-
-//   x += `<div class="step-body">
-//                       <h6 class="mb-2">&nbsp; &nbsp;Warden Approval</h6>
-                      
-//                     </div>
-//                   </div>
-//                 </div>
-//           </div>
-//       </div>
-      
-//   </div>
-// </div>`;
-// });
-// demoElement.innerHTML = x;
