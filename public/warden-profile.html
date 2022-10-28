@@ -614,7 +614,7 @@
                       <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                   </div>
                   <div class="ms-3">
-                      <h6 class="mb-0">Sarah Lones</h6>
+                      <h6 class="mb-0" id ="name-w"></h6>
                   </div>
               </div>
               <div class="navbar-nav w-100">
@@ -649,7 +649,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Sarah Lones</span>
+                            <span class="d-none d-lg-inline-flex" id="warden-name"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="index.html" class="dropdown-item">Log Out</a>
@@ -669,13 +669,13 @@
                               <div class="row mb-3">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" value="Ms.Keerthana" readonly>
+                                    <input id="w-name"type= "text" class="form-control" id="inputEmail3" value="Ms.Keerthana" readonly>
                                 </div>
                             </div>
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" value="keerthana@skcet.ac.in" readonly>
+                                        <input id="w-email" type="email" class="form-control" id="inputEmail3" value="keerthana@skcet.ac.in" readonly>
                                     </div>
                                 </div>
                                 
@@ -683,7 +683,7 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Year</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="III" readonly>
+                                        <input id="w-year" type="text" class="form-control" id="inputEmail3" value="III" readonly>
                                     </div>
                                 </div>
                                 
@@ -691,7 +691,7 @@
                                 <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail3" value="9065455890" readonly>
+                                        <input id="w-phone" type="text" class="form-control" id="inputEmail3" value="9065455890" readonly>
                                     </div>
                                 </div>
                             </form>
@@ -752,6 +752,79 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script type ="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import {
+  getFirestore,
+  getDoc,
+  setDoc,
+  doc,
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  where,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAhuD-3yonP88M0i2Ix3tvDjQSB3EzFna0",
+  authDomain: "leave-management-for-hostel.firebaseapp.com",
+  databaseURL:
+    "https://leave-management-for-hostel-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "leave-management-for-hostel",
+  storageBucket: "leave-management-for-hostel.appspot.com",
+  messagingSenderId: "799414591097",
+  appId: "1:799414591097:web:ae9c26fe05a6335236fea8",
+  measurementId: "G-ZDHQ7Z5WDT",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+const auth = getAuth();
+const user = auth.currentUser;
+const id = localStorage.getItem("id");
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+  } else {
+    window.location.replace("index.html");
+  }
+});
+
+const docRef = doc(db, "wardens", "keerthana");
+const docSnap = await getDoc(docRef);
+
+const name= document.getElementById("w-name");
+name.value =docSnap.get("Name");
+
+const Name= document.getElementById("name-w");
+Name.innerHTML =docSnap.get("Name");
+
+const wname= document.getElementById("warden-name");
+wname.innerHTML =docSnap.get("Name");
+
+const email= document.getElementById("w-email");
+email.value =docSnap.get("Email");
+
+const phone= document.getElementById("w-phone");
+phone.value =docSnap.get("Phone");
+
+const year= document.getElementById("w-year");
+year.value =docSnap.get("Year");
+
+    </script>
 </body>
 
 </html>
