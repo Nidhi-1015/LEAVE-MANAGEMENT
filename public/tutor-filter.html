@@ -15,10 +15,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
@@ -28,10 +29,10 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -61,21 +62,22 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="warden-profile.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
-                    <a href="warden-ward.html" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>My Ward</a>
+                    <a href="tutor-profile.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
+                    <a href="tutor-ward.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>My Ward</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave Requests</a>
+                        <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave Requests</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="warden-pending.html" class="dropdown-item">Pending</a>
-                            <a href="warden-approved.html" class="dropdown-item">Approved</a>
+                            <a href="tutor-pending.html" class="dropdown-item">Pending</a>
+                            <a href="tutor-approved.html" class="dropdown-item active">Approved</a>
                         </div>
                     </div>
-                    <a href="warden-onleave.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>On Leave</a>
-                    <a href="warden-filter.html" class="nav-item nav-link"><i class="fa fa-filter me-2"></i>Filter</a>
+                    <a href="tutor-onleave.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>On Leave</a>
+                    <a href="tutor-filter.html" class="nav-item nav-link active"><i class="fa fa-filter me-2"></i>Filter</a>
                 </div>
             </nav>
         </div>
         <!-- Sidebar End -->
+
 
 
         <!-- Content Start -->
@@ -88,7 +90,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -101,8 +103,42 @@
                     </div>
                 </div>
             </nav>
+            <!-- Navbar End -->
 
-            <!--Modal content starts-->
+            
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-xl-2"></div>
+                    <div class="col-sm-12 col-xl-8">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">OUTPASS</h6>
+                            <form id = "submitForm">
+                                <div class="row mb-3">
+                                    <label for="Out-time" class="col-sm-2 col-form-label">From</label>
+                                    <div class="col-sm-10">
+                                <input type="date" class="form-control" id = "out" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="In-time" class="col-sm-2 col-form-label">To</label>
+                                    <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="in" required>  
+                                    </div>
+                                </div>
+
+                                
+                                <button type="submit" value="Submit" class="btn btn-primary" >Filter</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+            </div>
+            <!-- Form End -->
+
+            
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -115,6 +151,10 @@
                         <div class="modal-body">
                             <div class="bg-light rounded h-100 p-4">
                                 <dl class="row mb-0">
+                                    
+                                    <dt class="col-sm-4">Purpose</dt>
+                                    <dd class="col-sm-8">For my family Get Together</dd>
+                                    
                                     <dt class="col-sm-4">Parent Name</dt>
                                     <dd class="col-sm-8">Jose</dd>
 
@@ -128,10 +168,10 @@
                                     <dd class="col-sm-8">6389076123</dd>
 
                                     <dt class="col-sm-4">Tutor Name</dt>
-                                    <dd class="col-sm-8">Amirta</dd>
+                                    <dd class="col-sm-8">Cathrine</dd>
 
                                     <dt class="col-sm-4">Tutor Ph No</dt>
-                                    <dd class="col-sm-8">750983923</dd>
+                                    <dd class="col-sm-8">750985123</dd>
 
                                 </dl>
                             </div>
@@ -143,67 +183,71 @@
                     </div>
                 </div>
             </div>
-            <!--Modal content ends-->
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">STUDENT LIST</h6>
-
+                        <h6 class="mb-0">Filtered List</h6>
+                        
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">RollNo</th>
+                                <tr class="text-dark" style = "text-align:center;">
                                     <th scope="col">Name</th>
+                                    <th scope="col">In Date & Time</th>
+                                    <th scope="col">Out Date & Time</th>
                                     <th scope="col">Class</th>
-                                    <th scope="col">Student's Phone</th>
-                                    <th scope="col">Parent's Phone</th>
-                                    <th scope="col">Details</th>
+                                    <th scope="col">Place</th>
+                                    <th scope="col">Companion</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>20EUCS145</td>
-                                    <td>Subha</td>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
                                     <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
                                 </tr>
+
                                 <tr>
-                                    <td>20EUCS145</td>
-                                    <td>Subha</td>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
                                     <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
                                 </tr>
+
                                 <tr>
-                                    <td>20EUCS145</td>
-                                    <td>Subha</td>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
                                     <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
                                 </tr>
+
                                 <tr>
-                                    <td>20EUCS145</td>
-                                    <td>Subha</td>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
                                     <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
                                 </tr>
+
                                 <tr>
-                                    <td>20EUCS145</td>
-                                    <td>Subha</td>
+                                    <td>Angelin A</td>
+                                    <td>01 Jan 2045,12.45</td>
+                                    <td>01 Jan 2045,8.00</td>
                                     <td>III CSE C</td>
-                                    <td>9798402106</td>
-                                    <td>9383210978</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
+                                    <td>Coimbatore</td>
+                                    <td>Self</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -216,12 +260,12 @@
 
 
 
-
+           
         </div>
         <!-- Content End -->
 
 
-
+       
     </div>
 
     <!-- JavaScript Libraries -->
