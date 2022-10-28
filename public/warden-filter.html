@@ -97,7 +97,7 @@
                             <span class="d-none d-lg-inline-flex">Sarah Lones</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="index.html" class="dropdown-item">Log Out</a>
+                            <a id="logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -112,17 +112,17 @@
                     <div class="col-sm-12 col-xl-8">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">OUTPASS</h6>
-                            <form id = "submitForm">
+                            <form id = "submit">
                                 <div class="row mb-3">
                                     <label for="Out-time" class="col-sm-2 col-form-label">From</label>
                                     <div class="col-sm-10">
-                                <input type="date" class="form-control" id = "out" required>
+                                <input type="date" class="form-control" id = "from" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="In-time" class="col-sm-2 col-form-label">To</label>
                                     <div class="col-sm-10">
-                                    <input type="date" class="form-control" id="in" required>  
+                                    <input type="date" class="form-control" id="to" required>  
                                     </div>
                                 </div>
 
@@ -203,51 +203,8 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
+                            <tbody id="tbody">
+                                
                             </tbody>
                         </table>
                     </div>
@@ -277,6 +234,7 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="module" src="./js/warden-filter.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
