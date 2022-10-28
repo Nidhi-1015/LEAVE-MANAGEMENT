@@ -98,7 +98,7 @@
                             <span class="d-none d-lg-inline-flex">Sarah Lones</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="index.html" class="dropdown-item">Log Out</a>
+                            <a id="logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -113,17 +113,17 @@
                     <div class="col-sm-12 col-xl-8">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">OUTPASS</h6>
-                            <form id = "submitForm">
+                            <form id = "submit">
                                 <div class="row mb-3">
                                     <label for="Out-time" class="col-sm-2 col-form-label">From</label>
                                     <div class="col-sm-10">
-                                <input type="date" class="form-control" id = "out" required>
+                                <input type="date" class="form-control" id = "from" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="In-time" class="col-sm-2 col-form-label">To</label>
                                     <div class="col-sm-10">
-                                    <input type="date" class="form-control" id="in" required>  
+                                    <input type="date" class="form-control" id="to" required>  
                                     </div>
                                 </div>
 
@@ -139,50 +139,6 @@
             <!-- Form End -->
 
             
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">DETAILS</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="bg-light rounded h-100 p-4">
-                                <dl class="row mb-0">
-                                    
-                                    <dt class="col-sm-4">Purpose</dt>
-                                    <dd class="col-sm-8">For my family Get Together</dd>
-                                    
-                                    <dt class="col-sm-4">Parent Name</dt>
-                                    <dd class="col-sm-8">Jose</dd>
-
-                                    <dt class="col-sm-4">Parent Ph No</dt>
-                                    <dd class="col-sm-8">9876554321</dd>
-
-                                    <dt class="col-sm-4">Guardian Name</dt>
-                                    <dd class="col-sm-8">Aryan</dd>
-
-                                    <dt class="col-sm-4">Guardian Ph No</dt>
-                                    <dd class="col-sm-8">6389076123</dd>
-
-                                    <dt class="col-sm-4">Tutor Name</dt>
-                                    <dd class="col-sm-8">Cathrine</dd>
-
-                                    <dt class="col-sm-4">Tutor Ph No</dt>
-                                    <dd class="col-sm-8">750985123</dd>
-
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
@@ -204,51 +160,7 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>III CSE C</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                </tr>
+                            <tbody id = "tbody">
                             </tbody>
                         </table>
                     </div>
@@ -278,6 +190,7 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="module" src="./js/tutor-filter.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
