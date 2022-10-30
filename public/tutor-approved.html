@@ -97,57 +97,14 @@
                             <span class="d-none d-lg-inline-flex">Sarah Lones</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="index.html" class="dropdown-item">Log Out</a>
+                            <a id="logout" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
             <!-- Navbar End -->
             
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">DETAILS</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="bg-light rounded h-100 p-4">
-                                <dl class="row mb-0">
-                                    
-                                    <dt class="col-sm-4">Purpose</dt>
-                                    <dd class="col-sm-8">For my family Get Together</dd>
-                                    
-                                    <dt class="col-sm-4">Parent Name</dt>
-                                    <dd class="col-sm-8">Jose</dd>
-
-                                    <dt class="col-sm-4">Parent Ph No</dt>
-                                    <dd class="col-sm-8">9876554321</dd>
-
-                                    <dt class="col-sm-4">Guardian Name</dt>
-                                    <dd class="col-sm-8">Aryan</dd>
-
-                                    <dt class="col-sm-4">Guardian Ph No</dt>
-                                    <dd class="col-sm-8">6389076123</dd>
-
-                                    <dt class="col-sm-4">Warden Name</dt>
-                                    <dd class="col-sm-8">Cathrine</dd>
-
-                                    <dt class="col-sm-4">Warden Ph No</dt>
-                                    <dd class="col-sm-8">750985123</dd>
-
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="modals"></div>
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
@@ -160,6 +117,7 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark" style = "text-align:center;">
+                                    <th scope="col">Roll No.</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">In Date & Time</th>
                                     <th scope="col">Out Date & Time</th>
@@ -168,55 +126,8 @@
                                     <th scope="col" >Details</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
-                                    
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
-                                    
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
-                                    
-                                </tr>
-
-                                <tr>
-                                    <td>Angelin A</td>
-                                    <td>01 Jan 2045,12.45</td>
-                                    <td>01 Jan 2045,8.00</td>
-                                    <td>Coimbatore</td>
-                                    <td>Self</td>
-                                    <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Details</a></td>
-                                    
-                                </tr>
+                            <tbody id="tbody">
+                                
                             </tbody>
                         </table>
                     </div>
@@ -246,6 +157,8 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script type="module" src="./js/tutor-approved.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
