@@ -110,6 +110,7 @@ const tutorDocRef = doc(db, "tutors", tutorId);
 const tutorDocSnap = await getDoc(tutorDocRef);
 const tutor = document.getElementById("tutor");
 tutor.value = tutorDocSnap.get("Name");
+console.log(tutorDocSnap.get("Name") + " sss " + docSnap.get("Tutor-id"));
 
 const phone = document.getElementById("t-phone");
 phone.value = tutorDocSnap.get("Phone");

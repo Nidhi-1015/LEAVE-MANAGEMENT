@@ -81,6 +81,10 @@ var everythingLoaded = setInterval(function () {
 
 const docRef = doc(db, "students", id);
 const docSnap = await getDoc(docRef);
+const tdocRef = doc(db, "tutors", docSnap.get("WardenId"));
+const tdocSnap = await getDoc(tdocRef);
+const wdocRef = doc(db, "wardens", docSnap.get("TutorId"));
+const wdocSnap = await getDoc(wdocRef);
 
 const name1 = document.getElementById("name1");
 name1.innerHTML = docSnap.get("Name");
@@ -102,9 +106,9 @@ x.addEventListener("click", async (event) => {
     const docData = {
       Email: docSnap.get("Email"),
       ID: id,
-      outDate: out.value,
+      outDate: out.value.substring(0, 10),
       outTime: out.value.substring(11),
-      inDate: inn.value,
+      inDate: inn.value.substring(0, 10),
       inTime: inn.value.substring(11),
       place: place.value,
       purpose: purpose.value,
@@ -117,7 +121,7 @@ x.addEventListener("click", async (event) => {
       Name: docSnap.get("Name"),
       pname: docSnap.get("ParentName"),
       wname: docSnap.get("WardenId"),
-      gname: docSnap.get("GuardianName"),
+      gname: docSnap.get("Guardi(anName"),
       gphone: docSnap.get("Gphone"),
       Sphone: docSnap.get("Sphone"),
       pphone: docSnap.get("Pphone"),
@@ -128,6 +132,8 @@ x.addEventListener("click", async (event) => {
       Address2: docSnap.get("Address2"),
       City: docSnap.get("City"),
       State: docSnap.get("State"),
+      wphone: wdocSnap.get("Phone"),
+      tphone: tdocSnap.get("Phone"),
     };
     const newDocRef = doc(collection(db, "applications"));
     await setDoc(newDocRef, docData);
