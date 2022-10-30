@@ -1,3 +1,4 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import {
   getFirestore,
@@ -5,8 +6,6 @@ import {
   setDoc,
   doc,
   collection,
-  addDoc,
-  onSnapshot,
   query,
   where,
   getDocs,
@@ -62,7 +61,6 @@ logout.addEventListener("click", (e) => {
       alert(errorMessage);
     });
 });
-
 function spin() {
   const spin = document.getElementById("spinner");
   spin.classList.remove("show");
@@ -76,44 +74,49 @@ var everythingLoaded = setInterval(function () {
 }, 4000);
 
 //main code
+
+const studDocRef = doc(db, "wardens", "keerthana");
+const studDocSnap = await getDoc(studDocRef);
+
+const name1 = document.getElementById("name");
+name1.innerHTML = studDocSnap.get("Name");
+
+
+const name2 = document.getElementById("name2");
+name2.innerHTML = studDocSnap.get("Name");
+
 const userquery = query(
   collection(db, "applications"),
-  where("status", "==", "stage3"),
-  where("tutorid", "==", "vijeyakaveriv")
+  
+  where("mode", "==", "active"),
+  where("status", "==", "stage2"),
+  where("wardenid", "==", "keerthana"),
 );
-const querySnapshot = await getDocs(userquery);
-
-var tbody = document.getElementById("tbody");
+// var demoElement = document.getElementById("demo");
 var x = "";
 var y = "";
+var tbody=document.getElementById("tabody");
+const querySnapshot = await getDocs(userquery);
 const allDocs = querySnapshot.forEach((snap) => {
   var obj = snap.data();
-  if (obj.outDate >= new Date().toISOString().substring(0, 10)) {
-    x +=
-      `<tr><td>` +
-      obj.ID +
-      `</td><td>` +
-      obj.Name +
-      `</td><td>` +
-      obj.inDate +
-      `</td><td>` +
-      obj.outDate +
-      `</td><td>` +
-      obj.place +
-      `</td><td>` +
-      obj.companion +
-      `</td><td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#` +
-      snap.id +
-      `">Details</a></td></tr>`;
-
-    y +=
-      `<div class="modal fade" id="` +
-      snap.id +
-      `" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  var status = obj.status;
+  
+  x+=
+  `<tr>
+  <td>`+ obj.Name+`</td>
+  <td>`+ obj.inDate.substring(0, 10)+` & `+obj.inDate.substring(11)+`</td>
+  <td>`+ obj.outDate.substring(0, 10)+` & `+obj.inDate.substring(11)+`</td>
+  <td>`+ obj.class+`</td>
+  <td><a class="btn btn-sm btn-success" href = "warden-accept.html?id=`+snap.id+`">Accept</a></td>
+  <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#`+snap.id +`" data-value = `+ snap.id+`>Details</a></td>
+</tr>`;
+y += `<div class="modal fade" id="`+ snap.id+`" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">DETAILS</h5>
+            
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -121,38 +124,36 @@ const allDocs = querySnapshot.forEach((snap) => {
         <div class="modal-body">
             <div class="bg-light rounded h-100 p-4">
                 <dl class="row mb-0">
+                    
+                    <dt class="col-sm-4">Place</dt>
+                    <dd class="col-sm-8">`+obj.place+`</dd>
+                    
+
                     <dt class="col-sm-4">Purpose</dt>
-                    <dd class="col-sm-8">` +
-      obj.purpose +
-      `</dd>
+                    <dd class="col-sm-8">`+obj.purpose+`</dd>
+                    
+                    <dt class="col-sm-4">Companion</dt>
+                    <dd class="col-sm-8">`+obj.companion+`</dd>
+
                     <dt class="col-sm-4">Parent Name</dt>
-                    <dd class="col-sm-8">` +
-      obj.pname +
-      `</dd>
+                    <dd class="col-sm-8">`+obj.pname+`</dd>
+
                     <dt class="col-sm-4">Parent Ph No</dt>
-                    <dd class="col-sm-8">` +
-      obj.pphone +
-      `</dd>
+                    <dd class="col-sm-8">`+obj.pphone+`</dd>
+
                     <dt class="col-sm-4">Guardian Name</dt>
-                    <dd class="col-sm-8">` +
-      obj.gname +
-      `</dd>
+                    <dd class="col-sm-8">`+obj.gname+`</dd>
 
                     <dt class="col-sm-4">Guardian Ph No</dt>
-                    <dd class="col-sm-8">` +
-      obj.gphone +
-      `</dd>
+                    <dd class="col-sm-8">`+obj.gphone+`</dd>
 
-                    <dt class="col-sm-4">Warden Name</dt>
-                    <dd class="col-sm-8">` +
-      obj.wname +
-      `</dd>
+                    <dt class="col-sm-4">Tutor Name</dt>
+                    <dd class="col-sm-8">`+obj.tutorid+`</dd>
 
-                    <dt class="col-sm-4">Warden Ph No</dt>
-                    <dd class="col-sm-8">` +
-      obj.wphone +
-      `</dd>
+                    <dt class="col-sm-4">Tutor Ph No</dt>
+                    <dd class="col-sm-8">`+obj.tphone+`</dd>
 
+                    
 
                 </dl>
             </div>
@@ -164,7 +165,12 @@ const allDocs = querySnapshot.forEach((snap) => {
     </div>
 </div>
 </div>`;
-  }
+console.log(snap.id);
+
 });
-tbody.innerHTML = x;
+tbody.innerHTML=x;
 document.getElementById("modals").innerHTML = y;
+
+
+
+
