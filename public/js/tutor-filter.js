@@ -77,29 +77,51 @@ var everythingLoaded = setInterval(function () {
   }
 }, 4000);
 
-async function func(fromdate, todate){
-    const userquery = query(collection(db, "applications"), where("outTime", ">=", fromdate), where("outTime", "<=", todate));
-    const querySnapshot = await getDocs(userquery);
-    var x = "";
-    const allDocs = querySnapshot.forEach((snap) => {
-        var obj = snap.data();
-        x += `<tr>
-        <td>`+ obj.Name +`</td>
-        <td>`+obj.outTime + `  ` + obj.outDate.substring(11)+`</td>
-        <td>`+obj.inTime + `  ` + obj.inDate.substring(11)+`</td>
-        <td>`+obj.year+` `+obj.dept+` `+obj.class+`</td>
-        <td>`+obj.place+`</td>
-        <td>`+obj.companion+`</td>
+async function func(fromdate, todate) {
+  const userquery = query(
+    collection(db, "applications"),
+    where("outDate", ">=", fromdate),
+    where("outDate", "<=", todate)
+  );
+  const querySnapshot = await getDocs(userquery);
+  var x = "";
+  const allDocs = querySnapshot.forEach((snap) => {
+    var obj = snap.data();
+    x +=
+      `<tr>
+        <td>` +
+      obj.Name +
+      `</td>
+        <td>` +
+      obj.outDate +
+      `  ` +
+      obj.outTime +
+      `</td>
+        <td>` +
+      obj.inDate +
+      `  ` +
+      obj.inTime +
+      `</td>
+        <td>` +
+      obj.year +
+      ` ` +
+      obj.dept +
+      ` ` +
+      obj.class +
+      `</td>
+        <td>` +
+      obj.place +
+      `</td>
+        <td>` +
+      obj.companion +
+      `</td>
     </tr>`;
-    });
-    document.getElementById("tbody").innerHTML = x;
+  });
+  document.getElementById("tbody").innerHTML = x;
 }
-submit.addEventListener('submit',(event)=>{
-    event.preventDefault();
-    var fromdate=document.getElementById("from");
-    var todate=document.getElementById("to");
-    func(fromdate.value, todate.value);
+submit.addEventListener("submit", (event) => {
+  event.preventDefault();
+  var fromdate = document.getElementById("from");
+  var todate = document.getElementById("to");
+  func(fromdate.value, todate.value);
 });
-
-
-

@@ -32,7 +32,6 @@ const firebaseConfig = {
   measurementId: "G-ZDHQ7Z5WDT",
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
@@ -80,9 +79,9 @@ var everythingLoaded = setInterval(function () {
 
 const docRef = doc(db, "students", id);
 const docSnap = await getDoc(docRef);
-const tdocRef = doc(db, "tutors", docSnap.get("WardenId"));
+const tdocRef = doc(db, "tutors", docSnap.get("TutorId"));
 const tdocSnap = await getDoc(tdocRef);
-const wdocRef = doc(db, "wardens", docSnap.get("TutorId"));
+const wdocRef = doc(db, "wardens", docSnap.get("WardenId"));
 const wdocSnap = await getDoc(wdocRef);
 
 const name1 = document.getElementById("name1");
@@ -120,7 +119,7 @@ x.addEventListener("click", async (event) => {
       Name: docSnap.get("Name"),
       pname: docSnap.get("ParentName"),
       wname: docSnap.get("WardenId"),
-      gname: docSnap.get("Guardi(anName"),
+      gname: docSnap.get("GuardianName"),
       gphone: docSnap.get("Gphone"),
       Sphone: docSnap.get("Sphone"),
       pphone: docSnap.get("Pphone"),

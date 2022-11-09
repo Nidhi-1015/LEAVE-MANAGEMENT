@@ -105,12 +105,11 @@ dept.value = docSnap.get("Dept");
 const clas = document.getElementById("clas");
 clas.value = docSnap.get("Class");
 
-const tutorId = docSnap.get("Tutor-id");
+const tutorId = docSnap.get("TutorId");
 const tutorDocRef = doc(db, "tutors", tutorId);
 const tutorDocSnap = await getDoc(tutorDocRef);
 const tutor = document.getElementById("tutor");
 tutor.value = tutorDocSnap.get("Name");
-console.log(tutorDocSnap.get("Name") + " sss " + docSnap.get("Tutor-id"));
 
 const phone = document.getElementById("t-phone");
 phone.value = tutorDocSnap.get("Phone");
@@ -122,9 +121,9 @@ const block = document.getElementById("block");
 block.value = docSnap.get("Block");
 
 const roomno = document.getElementById("roomno");
-roomno.value = docSnap.get("Room-no");
+roomno.value = docSnap.get("RoomNo");
 
-const wardenId = docSnap.get("Warden-id");
+const wardenId = docSnap.get("WardenId");
 const wardenDocRef = doc(db, "wardens", wardenId);
 const wardenDocSnap = await getDoc(wardenDocRef);
 const warden = document.getElementById("warden");
@@ -134,13 +133,13 @@ const wphone = document.getElementById("w-phone");
 wphone.value = wardenDocSnap.get("Phone");
 
 const gphone = document.getElementById("g-phone");
-gphone.value = docSnap.get("G-phone");
+gphone.value = docSnap.get("Gphone");
 
 const pphone = document.getElementById("p-phone");
-pphone.value = docSnap.get("P-phone");
+pphone.value = docSnap.get("Pphone");
 
 const parent = document.getElementById("parent");
-parent.value = docSnap.get("Parent-name");
+parent.value = docSnap.get("ParentName");
 
 const gaurdian = document.getElementById("gaurdian");
-gaurdian.value = docSnap.get("Gaurdian-name");
+gaurdian.value = docSnap.get("GaurdianName");

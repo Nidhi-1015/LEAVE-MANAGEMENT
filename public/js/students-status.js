@@ -107,17 +107,17 @@ const allDocs = querySnapshot.forEach((snap) => {
               <dl class="row mb-0">
                   <dt class="col-sm-4">Out Info</dt>
                   <dd class="col-sm-8">` +
-    obj.outDate.substring(0, 10) +
+    obj.outDate +
     ` - ` +
-    obj.outDate.substring(11) +
+    obj.outTime +
     `</dd>
                   
 
                   <dt class="col-sm-4">In Info</dt>
                   <dd class="col-sm-8">` +
-    obj.inDate.substring(0, 10) +
+    obj.inDate +
     ` - ` +
-    obj.inDate.substring(11) +
+    obj.inTime +
     `</dd>
 
                   <dt class="col-sm-4">Place</dt>

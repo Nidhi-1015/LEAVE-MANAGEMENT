@@ -118,13 +118,13 @@ const allDocs = querySnapshot.forEach((snap) => {
   var obj = snap.data();
   x +=
     `<tr><td>` +
-    obj.outDate.substring(0, 10) +
+    obj.outDate +
     `</td><td>` +
-    obj.outDate.substring(11) +
+    obj.outTime +
     `</td><td>` +
-    obj.inDate.substring(0, 10) +
+    obj.inDate +
     `</td><td>` +
-    obj.inDate.substring(11) +
+    obj.inTime +
     `</td><td>` +
     obj.place +
     `</td><td>`;
