@@ -75,7 +75,7 @@ var everythingLoaded = setInterval(function () {
 
 //main code
 
-const studDocRef = doc(db, "tutors", "vijeyakaveriv");
+const studDocRef = doc(db, "tutors", id);
 const studDocSnap = await getDoc(studDocRef);
 
 const name1 = document.getElementById("name");
@@ -89,30 +89,51 @@ name2.innerHTML = studDocSnap.get("Name");
 
 const userquery = query(
   collection(db, "applications"),
-  
+
   where("mode", "==", "active"),
   where("status", "==", "stage1"),
-  where("tutorid", "==", "vijeyakaveriv"),
+  where("tutorid", "==", id)
 );
 // var demoElement = document.getElementById("demo");
 var x = "";
 var y = "";
-var tbody=document.getElementById("tabody");
+var tbody = document.getElementById("tabody");
 const querySnapshot = await getDocs(userquery);
 const allDocs = querySnapshot.forEach((snap) => {
   var obj = snap.data();
   var status = obj.status;
-  
-  x+=
-  `<tr>
-  <td>`+ obj.Name+`</td>
-  <td>`+ obj.inDate.substring(0, 10)+` & `+obj.inDate.substring(11)+`</td>
-  <td>`+ obj.outDate.substring(0, 10)+` & `+obj.inDate.substring(11)+`</td>
-  <td><a class="btn btn-sm btn-success" href = "tutor-accept.html?id=`+snap.id+`">Accept</a></td>
-  <td><a class="btn btn-sm btn-danger" href="tutor-reject.html?id=`+snap.id+`">Reject</a></td>
-  <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#`+snap.id +`" data-value = `+ snap.id+`>Details</a></td>
+
+  x +=
+    `<tr>
+  <td>` +
+    obj.Name +
+    `</td>
+  <td>` +
+    obj.inDate +
+    ` & ` +
+    obj.inTime +
+    `</td>
+  <td>` +
+    obj.outDate +
+    ` & ` +
+    obj.outTime +
+    `</td>
+  <td><a class="btn btn-sm btn-success" href = "tutor-accept.html?id=` +
+    snap.id +
+    `">Accept</a></td>
+  <td><a class="btn btn-sm btn-danger" href="tutor-reject.html?id=` +
+    snap.id +
+    `">Reject</a></td>
+  <td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#` +
+    snap.id +
+    `" data-value = ` +
+    snap.id +
+    `>Details</a></td>
 </tr>`;
-y += `<div class="modal fade" id="`+ snap.id+`" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  y +=
+    `<div class="modal fade" id="` +
+    snap.id +
+    `" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -128,29 +149,45 @@ y += `<div class="modal fade" id="`+ snap.id+`" tabindex="-1" role="dialog" aria
                 <dl class="row mb-0">
                     
                     <dt class="col-sm-4">Place</dt>
-                    <dd class="col-sm-8">`+obj.place+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.place +
+    `</dd>
                     
 
                     <dt class="col-sm-4">Purpose</dt>
-                    <dd class="col-sm-8">`+obj.purpose+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.purpose +
+    `</dd>
                     
                     <dt class="col-sm-4">Companion</dt>
-                    <dd class="col-sm-8">`+obj.companion+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.companion +
+    `</dd>
 
                     <dt class="col-sm-4">Parent Name</dt>
-                    <dd class="col-sm-8">`+obj.pname+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.pname +
+    `</dd>
 
                     <dt class="col-sm-4">Parent Ph No</dt>
-                    <dd class="col-sm-8">`+obj.pphone+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.pphone +
+    `</dd>
 
                     <dt class="col-sm-4">Guardian Name</dt>
-                    <dd class="col-sm-8">`+obj.gname+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.gname +
+    `</dd>
 
                     <dt class="col-sm-4">Guardian Ph No</dt>
-                    <dd class="col-sm-8">`+obj.gphone+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.gphone +
+    `</dd>
 
                     <dt class="col-sm-4">Warden Name</dt>
-                    <dd class="col-sm-8">`+obj.wardenid+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.wardenid +
+    `</dd>
 
                     
 
@@ -164,12 +201,7 @@ y += `<div class="modal fade" id="`+ snap.id+`" tabindex="-1" role="dialog" aria
     </div>
 </div>
 </div>`;
-// console.log(snap.id);
-
+  // console.log(snap.id);
 });
-tbody.innerHTML=x;
+tbody.innerHTML = x;
 document.getElementById("modals").innerHTML = y;
-
-
-
-

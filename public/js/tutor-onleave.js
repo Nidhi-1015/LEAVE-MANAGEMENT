@@ -62,35 +62,61 @@ logout.addEventListener("click", (e) => {
 });
 
 function spin() {
-    const spin = document.getElementById("spinner");
-    spin.classList.remove("show");
-  }
-  
-  var everythingLoaded = setInterval(function () {
-    if (/loaded|complete/.test(document.readyState)) {
-      clearInterval(everythingLoaded);
-      spin();
-    }
-  }, 4000);
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
 
-  const userquery = query(collection(db, "applications"), where("status", "==", "stage3"),where("tutorid","==","vijeyakaveriv"));
-  const querySnapshot = await getDocs(userquery);
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 4000);
+
+const studDocRef = doc(db, "tutors", id);
+const studDocSnap = await getDoc(studDocRef);
+
+const name1 = document.getElementById("name");
+name1.innerHTML = studDocSnap.get("Name");
+
+const name2 = document.getElementById("name2");
+name2.innerHTML = studDocSnap.get("Name");
+
+const userquery = query(
+  collection(db, "applications"),
+  where("status", "==", "stage3"),
+  where("tutorid", "==", id)
+);
+const querySnapshot = await getDocs(userquery);
 
 var tbody = document.getElementById("tbody");
 var x = "";
 var y = "";
 const allDocs = querySnapshot.forEach((snap) => {
-var obj = snap.data();
-if(obj.outDate <= new Date().toISOString().substring(0,10)&& obj.inDate>=new Date().toISOString().substring(0,10));
-x+= 
-`<tr><td>`+obj.ID+
-`</td><td>`+obj.Name+
-`</td><td>`+obj.year+obj.dept+obj.class+
-`</td><td>`+obj.outDate+
-`</td><td>`+obj.place+
-`</td><td>`+obj.inDate+
-`</td><td>`+obj.inTime+
-`</td>`;
+  var obj = snap.data();
+  if (
+    obj.outDate <= new Date().toISOString().substring(0, 10) &&
+    obj.inDate >= new Date().toISOString().substring(0, 10)
+  ) {
+    x +=
+      `<tr><td>` +
+      obj.ID +
+      `</td><td>` +
+      obj.Name +
+      `</td><td>` +
+      obj.year +
+      obj.dept +
+      obj.class +
+      `</td><td>` +
+      obj.outDate +
+      `</td><td>` +
+      obj.place +
+      `</td><td>` +
+      obj.inDate +
+      `</td><td>` +
+      obj.inTime +
+      `</td>`;
+  }
 });
 
-tbody.innerHTML=x;
+tbody.innerHTML = x;

@@ -54,19 +54,13 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Sarah Lones</h6>
+                        <h6 class="mb-0" id="name2"></h6>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="warden-profile.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Profile</a>
                     <a href="warden-ward.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>My Ward</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Leave Requests</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="warden-pending.html" class="dropdown-item">Pending</a>
-                            <a href="warden-approved.html" class="dropdown-item">Approved</a>
-                        </div>
-                    </div>
+                    <a href="warden-pending.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Pending Requests</a>
                     <a href="warden-onleave.html" class="nav-item nav-link active"><i class="fa fa-file-alt me-2"></i>On Leave</a>
                     <a href="warden-filter.html" class="nav-item nav-link"><i class="fa fa-filter me-2"></i>Filter</a>
                 </div>
@@ -79,7 +73,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="tutor-profile.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="warden-profile.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -90,7 +84,7 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Sarah Lones</span>
+                            <span class="d-none d-lg-inline-flex" id="name"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a id= "logout" class="dropdown-item">Log Out</a>

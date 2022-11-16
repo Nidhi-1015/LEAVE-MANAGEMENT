@@ -76,10 +76,20 @@ var everythingLoaded = setInterval(function () {
 }, 4000);
 
 //main code
+
+const studDocRef = doc(db, "tutors", id);
+const studDocSnap = await getDoc(studDocRef);
+
+const name1 = document.getElementById("name");
+name1.innerHTML = studDocSnap.get("Name");
+
+const name2 = document.getElementById("name2");
+name2.innerHTML = studDocSnap.get("Name");
+
 const userquery = query(
   collection(db, "applications"),
-  where("status", "==", "stage3"),
-  where("tutorid", "==", "vijeyakaveriv")
+  where("status", "==", "stage2"),
+  where("tutorid", "==", id)
 );
 const querySnapshot = await getDocs(userquery);
 

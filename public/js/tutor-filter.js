@@ -77,6 +77,15 @@ var everythingLoaded = setInterval(function () {
   }
 }, 4000);
 
+const studDocRef = doc(db, "tutors", id);
+const studDocSnap = await getDoc(studDocRef);
+
+const name1 = document.getElementById("name");
+name1.innerHTML = studDocSnap.get("Name");
+
+const name2 = document.getElementById("name2");
+name2.innerHTML = studDocSnap.get("Name");
+
 async function func(fromdate, todate) {
   const userquery = query(
     collection(db, "applications"),

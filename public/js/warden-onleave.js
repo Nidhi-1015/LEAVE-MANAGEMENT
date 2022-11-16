@@ -77,12 +77,21 @@ var everythingLoaded = setInterval(function () {
   }
 }, 4000);
 
+const wDocRef = doc(db, "wardens", id);
+const wDocSnap = await getDoc(wDocRef);
+
+const name1 = document.getElementById("name");
+name1.innerHTML = wDocSnap.get("Name");
+
+const name2 = document.getElementById("name2");
+name2.innerHTML = wDocSnap.get("Name");
+
 //main code
 
 const userquery = query(
   collection(db, "applications"),
   where("status", "==", "stage3"),
-  where("wardenid", "==", "keerthana")
+  where("wardenid", "==", id)
 );
 const querySnapshot = await getDocs(userquery);
 

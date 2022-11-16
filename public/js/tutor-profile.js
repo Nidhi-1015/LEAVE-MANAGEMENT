@@ -74,10 +74,9 @@ var everythingLoaded = setInterval(function () {
   }
 }, 4000);
 
-
 //main code
 
-const docRef = doc(db, "tutors", "vijeyakaveriv");
+const docRef = doc(db, "tutors", id);
 const docSnap = await getDoc(docRef);
 
 const name1 = document.getElementById("name");
@@ -98,7 +97,5 @@ email1.value = docSnap.get("Email");
 const dept1 = document.getElementById("dept");
 dept1.value = docSnap.get("Dept");
 
-
 const phone1 = document.getElementById("phone");
 phone1.value = docSnap.get("Phone");
-

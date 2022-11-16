@@ -72,19 +72,19 @@ const date1 = docSnap.get("inDate");
 const date2 = docSnap.get("outDate");
 
 const inDate = document.getElementById("inDate");
-inDate.innerHTML = date1.substring(0, 10) + " - " + date1.substring(11);
+inDate.innerHTML = docSnap.get("inDate") + " - " + docSnap.get("inTime");
 
 const outDate = document.getElementById("outDate");
-outDate.innerHTML = date2.substring(0, 10) + " - " + date2.substring(11);
+outDate.innerHTML = docSnap.get("outDate") + " - " + docSnap.get("outTime");
 
 const companion = document.getElementById("companion");
 companion.innerHTML = docSnap.get("companion");
 
 const ph1 = document.getElementById("ph1");
-ph1.innerHTML = docSnap.get("SPhone");
+ph1.innerHTML = docSnap.get("Sphone");
 
 const ph2 = document.getElementById("ph2");
-ph2.innerHTML = docSnap.get("PPhone");
+ph2.innerHTML = docSnap.get("pphone");
 
 const address = document.getElementById("address");
 address.innerHTML =

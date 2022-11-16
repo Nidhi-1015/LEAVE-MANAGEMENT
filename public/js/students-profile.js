@@ -142,4 +142,5 @@ const parent = document.getElementById("parent");
 parent.value = docSnap.get("ParentName");
 
 const gaurdian = document.getElementById("gaurdian");
-gaurdian.value = docSnap.get("GaurdianName");
+gaurdian.value = docSnap.get("Gaurdian");
+console.log(docSnap.get("Gaurdian"));

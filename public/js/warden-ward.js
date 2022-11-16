@@ -61,34 +61,57 @@ logout.addEventListener("click", (e) => {
     });
 });
 function spin() {
-    const spin = document.getElementById("spinner");
-    spin.classList.remove("show");
-  }
-  
-  var everythingLoaded = setInterval(function () {
-    if (/loaded|complete/.test(document.readyState)) {
-      clearInterval(everythingLoaded);
-      spin();
-    }
-  }, 4000);
+  const spin = document.getElementById("spinner");
+  spin.classList.remove("show");
+}
 
-const userquery = query(collection(db, "students"), where("WardenId", "==", "keerthana"));
+var everythingLoaded = setInterval(function () {
+  if (/loaded|complete/.test(document.readyState)) {
+    clearInterval(everythingLoaded);
+    spin();
+  }
+}, 4000);
+const wDocRef = doc(db, "wardens", id);
+const wDocSnap = await getDoc(wDocRef);
+
+const name1 = document.getElementById("name");
+name1.innerHTML = wDocSnap.get("Name");
+
+const name2 = document.getElementById("name2");
+name2.innerHTML = wDocSnap.get("Name");
+
+const userquery = query(
+  collection(db, "students"),
+  where("WardenId", "==", id)
+);
 const querySnapshot = await getDocs(userquery);
 
 var tbody = document.getElementById("tbody");
 var x = "";
 var y = "";
 const allDocs = querySnapshot.forEach((snap) => {
-var obj = snap.data();
-x+= 
-`<tr><td>`+snap.id+
-`</td><td>`+obj.Name+
-`</td><td>`+obj.Year+obj.Dept+obj.Class+
-`</td><td>`+obj.Sphone+
-`</td><td>`+obj.Pphone+
-`</td><td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#`+snap.id+`">Details</a></td></tr>`;
+  var obj = snap.data();
+  x +=
+    `<tr><td>` +
+    snap.id +
+    `</td><td>` +
+    obj.Name +
+    `</td><td>` +
+    obj.Year +
+    obj.Dept +
+    obj.Class +
+    `</td><td>` +
+    obj.Sphone +
+    `</td><td>` +
+    obj.Pphone +
+    `</td><td><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#` +
+    snap.id +
+    `">Details</a></td></tr>`;
 
-y += `<div class="modal fade" id="`+snap.id+`" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  y +=
+    `<div class="modal fade" id="` +
+    snap.id +
+    `" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -101,17 +124,27 @@ y += `<div class="modal fade" id="`+snap.id+`" tabindex="-1" role="dialog" aria-
             <div class="bg-light rounded h-100 p-4">
                 <dl class="row mb-0">
                     <dt class="col-sm-4">Parent Name</dt>
-                    <dd class="col-sm-8">` + obj.ParentName+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.ParentName +
+    `</dd>
                     <dt class="col-sm-4">Parent Ph No</dt>
-                    <dd class="col-sm-8">`+obj.Pphone+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.Pphone +
+    `</dd>
                     <dt class="col-sm-4">Guardian Name</dt>
-                    <dd class="col-sm-8">`+obj.GuardianName+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.GuardianName +
+    `</dd>
 
                     <dt class="col-sm-4">Guardian Ph No</dt>
-                    <dd class="col-sm-8">`+obj.Gphone+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.Gphone +
+    `</dd>
 
                     <dt class="col-sm-4">Tutor Name</dt>
-                    <dd class="col-sm-8">`+obj.TutorId+`</dd>
+                    <dd class="col-sm-8">` +
+    obj.TutorId +
+    `</dd>
 
                 </dl>
             </div>
